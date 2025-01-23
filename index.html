@@ -9,6 +9,7 @@
             --primary-color: #003366;
             --secondary-color: #ffffff;
             --text-color: #333333;
+            --bg-light: #f9f9f9;
             --transition: all 0.3s ease;
         }
 
@@ -46,9 +47,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
         }
 
         .logo {
@@ -60,22 +58,6 @@
         .logo img {
             height: 50px;
             width: auto;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            color: var(--secondary-color);
-        }
-
-        .primary-text {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .tagline {
-            font-size: 0.9rem;
-            opacity: 0.9;
         }
 
         .nav-links {
@@ -146,13 +128,14 @@
         /* Services Section */
         .services-section {
             padding: 5rem 0;
-            background: #f5f5f5;
+            background: var(--bg-light);
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
             color: var(--primary-color);
+            font-size: 2.5rem;
         }
 
         .services-grid {
@@ -205,6 +188,114 @@
             color: var(--primary-color);
             position: absolute;
             left: 0;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-image {
+            position: sticky;
+            top: 100px;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .about-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .about-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .about-text {
+            margin-bottom: 2rem;
+        }
+
+        .expertise-areas {
+            margin: 2rem 0;
+        }
+
+        .expertise-areas h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .expertise-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .expertise-list li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .expertise-list li:before {
+            content: "→";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .philosophy {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .philosophy h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .philosophy-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .engagement {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            text-align: center;
         }
 
         /* Contact Form */
@@ -291,11 +382,21 @@
                 font-size: 2rem;
             }
 
-            .logo-text {
-                display: none;
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
-            .services-grid {
+            .about-image {
+                position: static;
+                text-align: center;
+            }
+
+            .profile-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .philosophy-pillars {
                 grid-template-columns: 1fr;
             }
         }
@@ -303,17 +404,14 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-content">
+        <div class="navbar-content container">
             <div class="logo">
                 <img src="images/logo-principal.svg" alt="Swiss Revenue Solutions">
-                <div class="logo-text">
-                    <span class="primary-text">Swiss Revenue Solutions</span>
-                    <span class="tagline">Revenue Management Consulting</span>
-                </div>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#about">À Propos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -380,46 +478,15 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="about" class="about-section">
         <div class="container">
-            <h2 class="section-title">Contactez-nous</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/Yo-profile.jpg" alt="Naroa Salcedo" class="profile-image">
                 </div>
-                <div class="form-group">
-                    <label for="phone">Téléphone</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Horaire souhaité pour le rendez-vous</label>
-                    <input type="datetime-local" id="time" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" required></textarea>
-                </div>
-                <button type="submit" class="cta-button">Envoyer</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Swiss Revenue Solutions</p>
-        </div>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                <div class="about-content">
+                    <h2>À Propos</h2>
+                    <h3>Bonjour, je suis Naroa Salcedo</h3>
+                    <div class="about-text">
+                        <p>Spécialiste en Revenue Management avec plus de 10 ans d'expérience dans l'industrie hôtelière internationale, j'ai développé une expertise unique en combinant mon expérience pratique dans des établissements prestigieux en Suisse, en Espagne et en Belgique avec une formation académique pointue, notamment un Master en Gestion Hôtelière et une certification de Revenue Management de l'École Hôtelière de Lausanne (EHL).</p>
+                        <p>Ma vision du Revenue Management va au-delà des chiffres. Je crois en une approche personnalisée qui respecte l'identité unique de chaque établissement tout en maximisant son potentiel de revenus. Cette philosoph
