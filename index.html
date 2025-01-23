@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiss Revenue Solutions | Revenue Management Consulting</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Swiss Revenue Solutions - Solutions personnalisées de Revenue Management pour hôtels indépendants en Suisse Romande. Expert en optimisation des revenus hôteliers.">
+    <meta name="keywords" content="revenue management, hôtellerie suisse, consulting hôtelier, optimisation revenus, Suisse Romande">
+    <meta property="og:title" content="Swiss Revenue Solutions | Revenue Management Consulting">
+    <meta property="og:description" content="Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse">
+    <meta property="og:image" content="images/logo-principal.png">
+    <meta property="og:url" content="https://nsalc92.github.io/SwissRevenueSolutions/">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         :root {
             --primary-color: #0a1933;
@@ -17,20 +29,38 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, #0a1933, #1a3b6d);
+            z-index: 1001;
+            transition: width 0.3s ease;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 clamp(1rem, 5vw, 2rem);
             position: relative;
             z-index: 3;
+        }
+
+        section {
+            padding: 6rem 0;
+            scroll-margin-top: 80px;
         }
 
         /* Navbar */
@@ -41,6 +71,12 @@
             top: 0;
             z-index: 1000;
             padding: 1rem 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(10,25,51,0.95);
+            backdrop-filter: blur(5px);
         }
 
         .navbar-content {
@@ -57,6 +93,11 @@
         .logo img {
             height: 40px;
             width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -70,6 +111,33 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
         }
 
         /* Hero Section */
@@ -79,6 +147,7 @@
             display: flex;
             align-items: center;
             padding-top: 80px;
+            overflow: hidden;
         }
 
         .hero-background {
@@ -90,8 +159,11 @@
             background: url('images/portrait-pierreavoi.jpg');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             opacity: 0.9;
             z-index: 1;
+            transform: scale(1.1);
+            transition: transform 0.3s ease-out;
         }
 
         .hero-overlay {
@@ -100,7 +172,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(rgba(10,25,51,0.8), rgba(10,25,51,0.9));
+            background: linear-gradient(
+                rgba(10,25,51,0.8),
+                rgba(10,25,51,0.9)
+            );
             z-index: 2;
         }
 
@@ -115,20 +190,31 @@
         }
 
         .hero-content h1 {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 5vw, 2.8rem);
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Services Section */
         .services-section {
-            padding: 5rem 0;
             background: var(--bg-light);
         }
 
@@ -136,7 +222,7 @@
             text-align: center;
             margin-bottom: 3rem;
             color: var(--primary-color);
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
         }
 
         .services-grid {
@@ -150,6 +236,30 @@
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(10,25,51,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(10,25,51,0.05));
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(10,25,51,0.15);
+        }
+
+        .service-card:hover::before {
+            transform: translateX(0);
         }
 
         .service-header {
@@ -161,6 +271,11 @@
 
         .service-icon {
             font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .service-intro {
@@ -177,6 +292,7 @@
             margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
+            transition: transform 0.3s ease;
         }
 
         .service-features li:before {
@@ -184,11 +300,19 @@
             color: var(--primary-color);
             position: absolute;
             left: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .service-features li:hover {
+            transform: translateX(5px);
+        }
+
+        .service-features li:hover::before {
+            transform: scale(1.2);
         }
 
         /* About Section */
         .about-section {
-            padding: 5rem 0;
             background: white;
         }
 
@@ -209,18 +333,23 @@
             max-width: 400px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(10,25,51,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.02);
         }
 
         .about-content h2 {
             color: var(--primary-color);
             margin-bottom: 1rem;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
         }
 
         .about-content h3 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
         }
 
         .about-text {
@@ -232,6 +361,11 @@
             padding: 2rem;
             border-radius: 8px;
             margin: 2rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy:hover {
+            transform: translateY(-5px);
         }
 
         .philosophy h4 {
@@ -253,6 +387,12 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(10,25,51,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(10,25,51,0.1);
         }
 
         .engagement {
@@ -262,12 +402,18 @@
             color: white;
             border-radius: 8px;
             text-align: center;
+            transform: translateZ(0);
+            transition: transform 0.3s ease;
+        }
+
+        .engagement:hover {
+            transform: scale(1.02);
         }
 
         /* Contact Form */
         .contact-section {
             background: var(--primary-color);
-            padding: 5rem 0;
+            color: var(--secondary-color);
         }
 
         .contact-form {
@@ -276,6 +422,13 @@
             background: white;
             padding: 2rem;
             border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateZ(0);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-5px);
         }
 
         .form-group {
@@ -294,15 +447,17 @@
         .form-group textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid #ddd;
+            border: 2px solid #ddd;
             border-radius: 4px;
             font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(10,25,51,0.1);
         }
 
         .form-group textarea {
@@ -320,6 +475,30 @@
             font-size: 1rem;
             font-weight: bold;
             width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255,255,255,0.1);
+            transform: translate(-50%, -50%) rotate(45deg) scale(0);
+            transition: transform 0.6s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #0f2447;
+            transform: translateY(-2px);
+        }
+
+        .submit-button:hover::before {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1);
         }
 
         /* Footer */
@@ -332,14 +511,26 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: block;
+            }
+
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
             }
 
-            .hero-content h1 {
-                font-size: 2rem;
+            .nav-links.active {
+                transform: translateY(0);
             }
-
             .about-grid {
                 grid-template-columns: 1fr;
             }
@@ -361,11 +552,14 @@
     </style>
 </head>
 <body>
+    <div class="progress-bar"></div>
+    
     <nav class="navbar">
         <div class="navbar-content container">
             <div class="logo">
                 <img src="images/logo-principal.png" alt="Swiss Revenue Solutions">
             </div>
+            <button class="mobile-menu-button">☰</button>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
@@ -380,17 +574,17 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
-                <p>Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse. Solutions personnalisées pour les hôtels indépendants en Suisse Romande.</p>
+                <h1 data-aos="fade-up">Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse. Solutions personnalisées pour les hôtels indépendants en Suisse Romande.</p>
             </div>
         </div>
     </section>
 
     <section id="services" class="services-section">
         <div class="container">
-            <h2 class="section-title">Nos Services</h2>
+            <h2 class="section-title" data-aos="fade-up">Nos Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-header">
                         <i class="service-icon">📈</i>
                         <h3>Revenue Management</h3>
@@ -404,7 +598,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-header">
                         <i class="service-icon">🎯</i>
                         <h3>Analyse de Marché</h3>
@@ -418,7 +612,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-header">
                         <i class="service-icon">🎓</i>
                         <h3>Formation</h3>
@@ -438,19 +632,18 @@
     <section id="about" class="about-section">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image">
+                <div class="about-image" data-aos="fade-right">
                     <img src="images/Yo-profile.jpg" alt="Naroa Salcedo" class="profile-image">
                 </div>
                 <div class="about-content">
-                    <h2>À Propos</h2>
-                    <h3>Bonjour, je suis Naroa Salcedo</h3>
-                    <div class="about-text">
+                    <h2 data-aos="fade-up">À Propos</h2>
+                    <h3 data-aos="fade-up">Bonjour, je suis Naroa Salcedo</h3>
+                    <div class="about-text" data-aos="fade-up">
                         <p>Spécialiste en Revenue Management avec plus de 10 ans d'expérience dans l'industrie hôtelière internationale, j'ai développé une expertise unique en combinant mon expérience pratique dans des établissements prestigieux en Suisse, en Espagne et en Belgique avec une formation académique pointue, notamment un Master en Gestion Hôtelière et une certification de Revenue Management de l'École Hôtelière de Lausanne (EHL).</p>
                         <p>Ma vision du Revenue Management va au-delà des chiffres. Je crois en une approche personnalisée qui respecte l'identité unique de chaque établissement tout en maximisant son potentiel de revenus.</p>
                     </div>
-                    <div class="philosophy">
+                    <div class="philosophy" data-aos="fade-up">
                         <h4>Ma Philosophie</h4>
-                        <p>Je crois fermement que chaque établissement hôtelier est unique, avec sa propre histoire et son caractère distinctif. Ma philosophie de travail repose sur trois piliers essentiels:</p>
                         <div class="philosophy-pillars">
                             <div class="pillar">
                                 <h5>La Transparence</h5>
@@ -466,7 +659,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="engagement">
+                    <div class="engagement" data-aos="fade-up">
                         <p>Je m'engage à être plus qu'une consultante - je serai votre partenaire stratégique dans la croissance de votre établissement.</p>
                     </div>
                 </div>
@@ -474,10 +667,9 @@
         </div>
     </section>
 
-    <section id="
     <section id="contact" class="contact-section">
         <div class="container">
-            <div class="contact-form">
+            <div class="contact-form" data-aos="fade-up">
                 <form>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -510,5 +702,17 @@
             <p>&copy; 2024 Swiss Revenue Solutions</p>
         </div>
     </footer>
-</body>
-</html>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = 
