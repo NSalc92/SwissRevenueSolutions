@@ -6,7 +6,7 @@
     <title>Swiss Revenue Solutions | Revenue Management Consulting</title>
     <style>
         :root {
-            --primary-color: #003366;
+            --primary-color: #0a1933;
             --secondary-color: #ffffff;
             --text-color: #333333;
             --bg-light: #f9f9f9;
@@ -52,11 +52,10 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
         }
 
         .logo img {
-            height: 50px;
+            height: 40px;
             width: auto;
         }
 
@@ -70,7 +69,7 @@
             color: var(--secondary-color);
             text-decoration: none;
             font-weight: 500;
-            transition: var(--transition);
+            font-size: 1.1rem;
         }
 
         /* Hero Section */
@@ -101,7 +100,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8));
+            background: linear-gradient(rgba(10,25,51,0.8), rgba(10,25,51,0.9));
             z-index: 2;
         }
 
@@ -111,6 +110,8 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
+            z-index: 3;
         }
 
         .hero-content h1 {
@@ -148,12 +149,7 @@
             background: white;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(10,25,51,0.1);
         }
 
         .service-header {
@@ -212,7 +208,7 @@
             width: 100%;
             max-width: 400px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(10,25,51,0.1);
         }
 
         .about-content h2 {
@@ -231,41 +227,11 @@
             margin-bottom: 2rem;
         }
 
-        .expertise-areas {
-            margin: 2rem 0;
-        }
-
-        .expertise-areas h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .expertise-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            list-style: none;
-        }
-
-        .expertise-list li {
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .expertise-list li:before {
-            content: "→";
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-        }
-
         .philosophy {
             background: var(--bg-light);
             padding: 2rem;
             border-radius: 8px;
             margin: 2rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .philosophy h4 {
@@ -276,7 +242,7 @@
 
         .philosophy-pillars {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 1.5rem;
         }
@@ -286,7 +252,7 @@
             padding: 1.5rem;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(10,25,51,0.05);
         }
 
         .engagement {
@@ -301,17 +267,15 @@
         /* Contact Form */
         .contact-section {
             background: var(--primary-color);
-            color: var(--secondary-color);
             padding: 5rem 0;
         }
 
         .contact-form {
             max-width: 600px;
-            margin: 2rem auto 0;
+            margin: 0 auto;
             background: white;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .form-group {
@@ -323,6 +287,7 @@
             margin-bottom: 0.5rem;
             color: var(--primary-color);
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
         .form-group input,
@@ -331,14 +296,13 @@
             padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 4px;
-            transition: var(--transition);
+            font-size: 1rem;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(0,51,102,0.2);
         }
 
         .form-group textarea {
@@ -346,27 +310,21 @@
             resize: vertical;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: var(--primary-color);
+        .submit-button {
+            background: var(--primary-color);
+            color: white;
             padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: var(--transition);
             border: none;
+            border-radius: 4px;
             cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 1rem;
+            font-weight: bold;
+            width: 100%;
         }
 
         /* Footer */
         footer {
-            background: #002244;
+            background: var(--primary-color);
             color: var(--secondary-color);
             padding: 2rem 0;
             text-align: center;
@@ -406,7 +364,7 @@
     <nav class="navbar">
         <div class="navbar-content container">
             <div class="logo">
-                <img src="images/logo-principal.svg" alt="Swiss Revenue Solutions">
+                <img src="images/logo-principal.png" alt="Swiss Revenue Solutions">
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
@@ -424,7 +382,6 @@
             <div class="hero-content">
                 <h1>Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
                 <p>Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse. Solutions personnalisées pour les hôtels indépendants en Suisse Romande.</p>
-                <a href="#contact" class="cta-button">Découvrez votre potentiel de revenus - Consultation gratuite</a>
             </div>
         </div>
     </section>
@@ -489,4 +446,69 @@
                     <h3>Bonjour, je suis Naroa Salcedo</h3>
                     <div class="about-text">
                         <p>Spécialiste en Revenue Management avec plus de 10 ans d'expérience dans l'industrie hôtelière internationale, j'ai développé une expertise unique en combinant mon expérience pratique dans des établissements prestigieux en Suisse, en Espagne et en Belgique avec une formation académique pointue, notamment un Master en Gestion Hôtelière et une certification de Revenue Management de l'École Hôtelière de Lausanne (EHL).</p>
-                        <p>Ma vision du Revenue Management va au-delà des chiffres. Je crois en une approche personnalisée qui respecte l'identité unique de chaque établissement tout en maximisant son potentiel de revenus. Cette philosoph
+                        <p>Ma vision du Revenue Management va au-delà des chiffres. Je crois en une approche personnalisée qui respecte l'identité unique de chaque établissement tout en maximisant son potentiel de revenus.</p>
+                    </div>
+                    <div class="philosophy">
+                        <h4>Ma Philosophie</h4>
+                        <p>Je crois fermement que chaque établissement hôtelier est unique, avec sa propre histoire et son caractère distinctif. Ma philosophie de travail repose sur trois piliers essentiels:</p>
+                        <div class="philosophy-pillars">
+                            <div class="pillar">
+                                <h5>La Transparence</h5>
+                                <p>Des objectifs clairs et une communication ouverte sont la base de toute collaboration réussie.</p>
+                            </div>
+                            <div class="pillar">
+                                <h5>L'Innovation Pragmatique</h5>
+                                <p>J'utilise des solutions technologiques avancées, mais toujours avec un objectif pratique - générer des résultats concrets et mesurables.</p>
+                            </div>
+                            <div class="pillar">
+                                <h5>L'Accompagnement Personnalisé</h5>
+                                <p>Je limite volontairement le nombre de clients que j'accompagne pour garantir une attention personnalisée et un suivi rigoureux de chaque projet.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="engagement">
+                        <p>Je m'engage à être plus qu'une consultante - je serai votre partenaire stratégique dans la croissance de votre établissement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="horaire">Horaire souhaité pour le rendez-vous</label>
+                        <input type="datetime-local" id="horaire" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Swiss Revenue Solutions</p>
+        </div>
+    </footer>
+</body>
+</html>
