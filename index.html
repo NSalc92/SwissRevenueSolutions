@@ -15,7 +15,6 @@
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <style>
         :root {
             --primary-color: #0a1933;
@@ -38,6 +37,7 @@
             color: var(--text-color);
             overflow-x: hidden;
         }
+
         /* Progress Bar y Container */
         .progress-bar {
             position: fixed;
@@ -129,6 +129,37 @@
             width: 100%;
         }
 
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
         /* Hero Section y CTA */
         .hero-section {
             min-height: 100vh;
@@ -193,7 +224,7 @@
             animation: fadeInUp 1s ease forwards 0.5s;
         }
 
-        /* Nuevo CTA Button */
+        /* CTA Button */
         .cta-button {
             display: inline-block;
             background: #ffffff;
@@ -376,6 +407,11 @@
             box-shadow: 0 0 0 3px rgba(10,25,51,0.1);
         }
 
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
         .submit-button {
             background: var(--primary-color);
             color: white;
@@ -393,6 +429,16 @@
             background-color: #0f2447;
             transform: translateY(-2px);
         }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
     <div class="progress-bar"></div>
     
