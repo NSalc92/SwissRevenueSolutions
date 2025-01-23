@@ -8,6 +8,8 @@
         :root {
             --primary-color: #003366;
             --secondary-color: #ffffff;
+            --text-color: #333333;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -19,28 +21,61 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Navbar */
         .navbar {
             background-color: var(--primary-color);
-            padding: 1rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            padding: 1rem 0;
         }
 
         .navbar-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .logo img {
-            height: 40px;
+            height: 50px;
             width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            color: var(--secondary-color);
+        }
+
+        .primary-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
         .nav-links {
@@ -52,99 +87,140 @@
         .nav-links a {
             color: var(--secondary-color);
             text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
         }
 
+        /* Hero Section */
         .hero-section {
             min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/zermatt-montana.jpg');
-            background-size: cover;
-            background-position: center;
+            position: relative;
             display: flex;
             align-items: center;
             padding-top: 80px;
-            text-align: center;
-            color: white;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/portrait-pierreavoi.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8));
+            z-index: 2;
         }
 
         .hero-content {
+            color: var(--secondary-color);
+            text-align: center;
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        h1 {
-            font-size: 2.5rem;
+        .hero-content h1 {
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 2rem;
-            font-weight: bold;
-            cursor: pointer;
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
+        /* Services Section */
         .services-section {
             padding: 5rem 0;
             background: #f5f5f5;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .service-card {
             background: white;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: var(--transition);
         }
 
-        .about-section {
-            padding: 5rem 0;
-            background: white;
+        .service-card:hover {
+            transform: translateY(-5px);
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
+        .service-header {
+            display: flex;
             align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .profile-image {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
+        .service-icon {
+            font-size: 2rem;
         }
 
+        .service-intro {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Contact Form */
         .contact-section {
             background: var(--primary-color);
-            color: white;
+            color: var(--secondary-color);
             padding: 5rem 0;
         }
 
         .contact-form {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 2rem auto 0;
             background: white;
             padding: 2rem;
             border-radius: 8px;
-            color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .form-group {
@@ -154,6 +230,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
+            color: var(--primary-color);
             font-weight: bold;
         }
 
@@ -163,35 +240,63 @@
             padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(0,51,102,0.2);
         }
 
         .form-group textarea {
             height: 150px;
+            resize: vertical;
         }
 
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
         footer {
             background: #002244;
-            color: white;
+            color: var(--secondary-color);
             padding: 2rem 0;
             text-align: center;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
-            h1 {
+
+            .hero-content h1 {
                 font-size: 2rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .logo-text {
+                display: none;
             }
 
-            .profile-image {
-                margin: 0 auto;
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -200,56 +305,76 @@
     <nav class="navbar">
         <div class="navbar-content">
             <div class="logo">
-                <img src="images/logo-principal.jpg" alt="Swiss Revenue Solutions">
+                <img src="images/logo-principal.svg" alt="Swiss Revenue Solutions">
+                <div class="logo-text">
+                    <span class="primary-text">Swiss Revenue Solutions</span>
+                    <span class="tagline">Revenue Management Consulting</span>
+                </div>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">À Propos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="home" class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <h1>Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
-                <p>Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse</p>
-                <a href="#contact" class="cta-button">Consultation gratuite</a>
+                <p>Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse. Solutions personnalisées pour les hôtels indépendants en Suisse Romande.</p>
+                <a href="#contact" class="cta-button">Découvrez votre potentiel de revenus - Consultation gratuite</a>
             </div>
         </div>
     </section>
 
     <section id="services" class="services-section">
         <div class="container">
-            <h2>Nos Services</h2>
+            <h2 class="section-title">Nos Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Revenue Management</h3>
-                    <p>Optimisation des revenus et stratégies tarifaires</p>
+                    <div class="service-header">
+                        <i class="service-icon">📈</i>
+                        <h3>Revenue Management</h3>
+                    </div>
+                    <p class="service-intro">Optimisation des revenus et stratégies tarifaires</p>
+                    <ul class="service-features">
+                        <li>Stratégies personnalisées basées sur l'analyse de données</li>
+                        <li>Optimisation dynamique des prix</li>
+                        <li>Gestion des canaux de distribution</li>
+                        <li>Suivi mensuel des performances</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Analyse de Marché</h3>
-                    <p>Études concurrentielles et positionnement</p>
-                </div>
-                <div class="service-card">
-                    <h3>Formation</h3>
-                    <p>Formation et accompagnement personnalisé</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="profile-image-container">
-                    <img src="images/Yo-profile.jpg" alt="Profile" class="profile-image">
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class="service-icon">🎯</i>
+                        <h3>Analyse de Marché</h3>
+                    </div>
+                    <p class="service-intro">Études concurrentielles et positionnement</p>
+                    <ul class="service-features">
+                        <li>Analyse approfondie de la concurrence locale</li>
+                        <li>Identification des opportunités de marché</li>
+                        <li>Rapports de tendances mensuels</li>
+                        <li>Recommandations stratégiques adaptées</li>
+                    </ul>
                 </div>
-                <div class="about-text">
-                    <h2>L'expertise locale, la vision globale</h2>
-                    <p>Plus de 10 ans d'expérience dans le Revenue Management hôtelier en Suisse</p>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class="service-icon">🎓</i>
+                        <h3>Formation</h3>
+                    </div>
+                    <p class="service-intro">Formation et accompagnement personnalisé</p>
+                    <ul class="service-features">
+                        <li>Formation aux outils de Revenue Management</li>
+                        <li>Accompagnement pratique de votre équipe</li>
+                        <li>Workshops personnalisés</li>
+                        <li>Support continu</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -257,7 +382,7 @@
 
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Contactez-nous</h2>
+            <h2 class="section-title">Contactez-nous</h2>
             <form class="contact-form">
                 <div class="form-group">
                     <label for="email">Email</label>
