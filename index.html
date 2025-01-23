@@ -23,7 +23,6 @@
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <style>
         :root {
             --primary-color: #0a1933;
@@ -133,38 +132,6 @@
             width: 100%;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-button {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-button {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--primary-color);
-                padding: 1rem;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-        }
-
         /* Hero Section */
         .hero-section {
             min-height: 100vh;
@@ -243,9 +210,41 @@
             color: #ffffff;
         }
 
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
         /* Services Section */
         .services-section {
             background: var(--bg-light);
+            padding: 6rem 0;
         }
 
         .section-title {
@@ -259,14 +258,29 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .service-card {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(10,25,51,0.1);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .service-card:hover {
@@ -274,15 +288,27 @@
             box-shadow: 0 10px 20px rgba(10,25,51,0.15);
         }
 
-        .service-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
-        .service-icon {
-            font-size: 2rem;
+        .service-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-size: 1.2rem;
         }
 
         /* About Section */
@@ -355,6 +381,11 @@
             font-weight: bold;
         }
 
+        .form-group label .required {
+            color: #ff3860;
+            margin-left: 4px;
+        }
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -362,28 +393,19 @@
             border: 2px solid #ddd;
             border-radius: 4px;
             font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(10,25,51,0.1);
         }
 
         .form-group textarea {
             height: 150px;
             resize: vertical;
-        }
-
-        .submit-button {
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .submit-button:hover:not(:disabled) {
-            background-color: #0f2447;
         }
 
         /* Pop-up */
@@ -404,11 +426,12 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
             text-align: center;
             max-width: 400px;
             width: 90%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
         .close-popup {
@@ -422,7 +445,7 @@
             transition: all 0.3s ease;
         }
 
-        /* Responsive */
+        /* Responsive Styles */
         @media (max-width: 768px) {
             .about-container {
                 flex-direction: column;
@@ -437,9 +460,12 @@
             .credentials {
                 justify-content: center;
             }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-</head>
 <body>
     <div class="progress-bar"></div>
     
@@ -479,7 +505,46 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Nos Services</h2>
             <div class="services-grid">
-                <!-- Servicios aquí -->
+                <!-- Basic Package -->
+                <div class="service-card" data-aos="fade-up">
+                    <h3 class="service-title">Package Basic</h3>
+                    <p class="service-description">Solution idéale pour les petits hôtels débutant en Revenue Management.</p>
+                    <ul class="service-features">
+                        <li>Analyse mensuelle des performances</li>
+                        <li>Recommandations tarifaires</li>
+                        <li>Support par email</li>
+                        <li>Rapport mensuel</li>
+                    </ul>
+                    <p class="service-price">CHF 800-1,000/mois</p>
+                </div>
+
+                <!-- Standard Package -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="service-title">Package Standard</h3>
+                    <p class="service-description">Pour les hôtels cherchant une gestion plus approfondie.</p>
+                    <ul class="service-features">
+                        <li>Tout du package Basic</li>
+                        <li>Analyse hebdomadaire</li>
+                        <li>Optimisation des canaux de distribution</li>
+                        <li>Support téléphonique</li>
+                        <li>Formation de base</li>
+                    </ul>
+                    <p class="service-price">CHF 1,500-2,000/mois</p>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="service-title">Package Premium</h3>
+                    <p class="service-description">Solution complète pour une gestion revenue optimale.</p>
+                    <ul class="service-features">
+                        <li>Tout du package Standard</li>
+                        <li>Analyse quotidienne</li>
+                        <li>Stratégie personnalisée</li>
+                        <li>Formation avancée</li>
+                        <li>Support prioritaire 7/7</li>
+                    </ul>
+                    <p class="service-price">CHF 3,000+/mois</p>
+                </div>
             </div>
         </div>
     </section>
@@ -564,7 +629,8 @@
         // Inicializar AOS
         AOS.init({
             duration: 800,
-            once: true
+            once: true,
+            offset: 100
         });
 
         // Manejo del formulario
@@ -595,7 +661,7 @@
                 message: document.getElementById('message').value
             };
 
-            // Enviar email
+            // Enviar email usando EmailJS
             emailjs.send('swiss_revenue_contact', 'template_scxg67v', templateParams)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
@@ -615,10 +681,12 @@
         // Funciones del Pop-up
         function showPopup() {
             document.getElementById('successPopup').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
         }
 
         function closePopup() {
             document.getElementById('successPopup').style.display = 'none';
+            document.body.style.overflow = ''; // Restaurar scroll
         }
 
         // Cerrar pop-up al hacer clic fuera
@@ -645,6 +713,13 @@
             navLinks.classList.toggle('active');
         });
 
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
@@ -652,6 +727,48 @@
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Validación de formulario mejorada
+        const emailInput = document.getElementById('user_email');
+        const phoneInput = document.getElementById('user_phone');
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function validatePhone(phone) {
+            return /^[\d\s+()-]{8,}$/.test(phone);
+        }
+
+        emailInput.addEventListener('blur', function() {
+            if (this.value && !validateEmail(this.value)) {
+                this.classList.add('error');
+            } else {
+                this.classList.remove('error');
+            }
+        });
+
+        phoneInput.addEventListener('blur', function() {
+            if (this.value && !validatePhone(this.value)) {
+                this.classList.add('error');
+            } else {
+                this.classList.remove('error');
             }
         });
     </script>
