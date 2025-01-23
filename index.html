@@ -267,6 +267,88 @@
                 transform: translateY(0);
             }
         }
+
+        /* About Section */
+        .about-section {
+            background: var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(10,25,51,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .credential-item {
+            text-align: center;
+        }
+
+        .credential-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .credential-text {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .about-image img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .credentials {
+                justify-content: center;
+            }
+        }
         /* Services Section */
         .services-section {
             background: var(--bg-light);
@@ -523,89 +605,26 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="about" class="about-section">
         <div class="container">
-            <div class="contact-form" data-aos="fade-up">
-                <form>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="telephone">Téléphone</label>
-                        <input type="tel" id="telephone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="horaire">Horaire souhaité pour le rendez-vous</label>
-                        <input type="datetime-local" id="horaire" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-button">Envoyer</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Swiss Revenue Solutions</p>
-        </div>
-    </footer>
-
-    <!-- AOS Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-        // Inicializar AOS
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-
-        // Progress Bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.querySelector('.progress-bar').style.width = scrolled + '%';
-        });
-
-        // Mobile Menu
-        const menuButton = document.querySelector('.mobile-menu-button');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuButton.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Validación de fecha en el formulario
-        const dateTimeInput = document.getElementById('horaire');
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-
-        const minDateTime = `\${year}-\${month}-\${day}T\${hours}:\${minutes}`;
-        dateTimeInput.min = minDateTime;
-    </script>
-</body>
-</html>
+            <div class="about-container">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="images/Yo-profile.jpg" alt="Naroa Salcedo">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h2>À Propos de Moi</h2>
+                    <p>Avec plus de 10 ans d'expérience dans l'hôtellerie internationale, je suis spécialisée dans le Revenue Management et la gestion hôtelière. Mon parcours m'a permis de travailler dans des établissements prestigieux en Suisse, en Espagne et en Belgique.</p>
+                    <p>Titulaire d'un Master en Gestion Hôtelière et certifiée par l'École Hôtelière de Lausanne (EHL) en Revenue Management, j'apporte une expertise approfondie et une approche personnalisée à chaque projet.</p>
+                    <div class="credentials">
+                        <div class="credential-item">
+                            <div class="credential-number">10+</div>
+                            <div class="credential-text">Années d'Expérience</div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-number">3</div>
+                            <div class="credential-text">Pays</div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-number">100%</div>
+                            <div class="credential-text">Satisfaction Client</div>
+                        </div
