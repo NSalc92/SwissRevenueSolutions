@@ -10,7 +10,7 @@
     <meta name="keywords" content="revenue management, hôtellerie suisse, consulting hôtelier, optimisation revenus, Suisse Romande">
     <meta property="og:title" content="Swiss Revenue Solutions | Revenue Management Consulting">
     <meta property="og:description" content="Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse">
-    <meta property="og:image" content="/images/logo-principal.png">
+    <meta property="og:image" content="./images/logo-principal.png">
     <meta property="og:url" content="https://nsalc92.github.io/SwissRevenueSolutions/">
 
     <!-- AOS CSS -->
@@ -38,7 +38,6 @@
             color: var(--text-color);
             overflow-x: hidden;
         }
-
         /* Progress Bar */
         .progress-bar {
             position: fixed;
@@ -156,7 +155,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('/images/portrait-pierreavoi.jpg');
+            background: url('./images/portrait-pierreavoi.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -212,7 +211,6 @@
                 transform: translateY(0);
             }
         }
-
         /* Services Section */
         .services-section {
             background: var(--bg-light);
@@ -409,7 +407,6 @@
         .engagement:hover {
             transform: scale(1.02);
         }
-
         /* Contact Form */
         .contact-section {
             background: var(--primary-color);
@@ -533,4 +530,211 @@
             }
 
             .about-grid {
-                grid-template-columns: 1fr
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                position: static;
+                text-align: center;
+            }
+
+            .profile-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .philosophy-pillars {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <nav class="navbar">
+        <div class="navbar-content container">
+            <div class="logo">
+                <img src="./images/logo-principal.png" alt="Swiss Revenue Solutions">
+            </div>
+            <button class="mobile-menu-button">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-aos="fade-up">Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse. Solutions personnalisées pour les hôtels indépendants en Suisse Romande.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-header">
+                        <i class="service-icon">📈</i>
+                        <h3>Revenue Management</h3>
+                    </div>
+                    <p class="service-intro">Optimisation des revenus et stratégies tarifaires</p>
+                    <ul class="service-features">
+                        <li>Stratégies personnalisées basées sur l'analyse de données</li>
+                        <li>Optimisation dynamique des prix</li>
+                        <li>Gestion des canaux de distribution</li>
+                        <li>Suivi mensuel des performances</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-header">
+                        <i class="service-icon">🎯</i>
+                        <h3>Analyse de Marché</h3>
+                    </div>
+                    <p class="service-intro">Études concurrentielles et positionnement</p>
+                    <ul class="service-features">
+                        <li>Analyse approfondie de la concurrence locale</li>
+                        <li>Identification des opportunités de marché</li>
+                        <li>Rapports de tendances mensuels</li>
+                        <li>Recommandations stratégiques adaptées</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-header">
+                        <i class="service-icon">🎓</i>
+                        <h3>Formation</h3>
+                    </div>
+                    <p class="service-intro">Formation et accompagnement personnalisé</p>
+                    <ul class="service-features">
+                        <li>Formation aux outils de Revenue Management</li>
+                        <li>Accompagnement pratique de votre équipe</li>
+                        <li>Workshops personnalisés</li>
+                        <li>Support continu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="./images/Yo-profile.jpg" alt="Naroa Salcedo" class="profile-image">
+                </div>
+                <div class="about-content">
+                    <h2 data-aos="fade-up">À Propos</h2>
+                    <h3 data-aos="fade-up">Bonjour, je suis Naroa Salcedo</h3>
+                    <div class="about-text" data-aos="fade-up">
+                        <p>Spécialiste en Revenue Management avec plus de 10 ans d'expérience dans l'industrie hôtelière internationale.</p>
+                        <p>Ma vision du Revenue Management va au-delà des chiffres. Je crois en une approche personnalisée qui respecte l'identité unique de chaque établissement.</p>
+                    </div>
+                    <div class="philosophy" data-aos="fade-up">
+                        <h4>Ma Philosophie</h4>
+                        <div class="philosophy-pillars">
+                            <div class="pillar">
+                                <h5>La Transparence</h5>
+                                <p>Des objectifs clairs et une communication ouverte.</p>
+                            </div>
+                            <div class="pillar">
+                                <h5>L'Innovation</h5>
+                                <p>Des solutions technologiques avancées et pratiques.</p>
+                            </div>
+                            <div class="pillar">
+                                <h5>Le Sur-Mesure</h5>
+                                <p>Une attention personnalisée pour chaque client.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-form" data-aos="fade-up">
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Swiss Revenue Solutions</p>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+
+        // Mobile Menu
+        const menuButton = document.querySelector('.mobile-menu-button');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
