@@ -10,7 +10,7 @@
     <meta name="keywords" content="revenue management, hôtellerie suisse, consulting hôtelier, optimisation revenus, Suisse Romande">
     <meta property="og:title" content="Swiss Revenue Solutions | Revenue Management Consulting">
     <meta property="og:description" content="Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse">
-    <meta property="og:image" content="./images/logo-principal.png">
+    <meta property="og:image" content="images/logo-principal.png">
     <meta property="og:url" content="https://nsalc92.github.io/SwissRevenueSolutions/">
 
     <!-- AOS CSS -->
@@ -38,7 +38,7 @@
             color: var(--text-color);
             overflow-x: hidden;
         }
-        /* Progress Bar */
+        /* Progress Bar y Container */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -129,17 +129,7 @@
             width: 100%;
         }
 
-        .mobile-menu-button {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        /* Hero Section */
+        /* Hero Section y CTA */
         .hero-section {
             min-height: 100vh;
             position: relative;
@@ -155,14 +145,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('./images/portrait-pierreavoi.jpg');
+            background: url('images/portrait-pierreavoi.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             opacity: 0.9;
             z-index: 1;
-            transform: scale(1.1);
-            transition: transform 0.3s ease-out;
         }
 
         .hero-overlay {
@@ -205,50 +193,49 @@
             animation: fadeInUp 1s ease forwards 0.5s;
         }
 
+        /* Nuevo CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #0a1933;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            border: 2px solid #ffffff;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.7s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: #ffffff;
+        }
+
+        .cta-button .arrow {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover .arrow {
+            transform: translateX(5px);
+        }
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-.cta-button {
-    display: inline-block;
-    background: #ffffff;
-    color: #0a1933;
-    padding: 1.2rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 2rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    border: 2px solid #ffffff;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards 0.7s;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
-    background: transparent;
-    color: #ffffff;
-}
-
-.cta-button .arrow {
-    margin-left: 8px;
-    transition: transform 0.3s ease;
-}
-
-.cta-button:hover .arrow {
-    transform: translateX(5px);
-}
-
-/* Services Section */ // <- Este comentario ya existe en tu código
-
         /* Services Section */
         .services-section {
             background: var(--bg-light);
@@ -343,108 +330,6 @@
             transform: translateX(5px);
         }
 
-        .service-features li:hover::before {
-            transform: scale(1.2);
-        }
-
-        /* About Section */
-        .about-section {
-            background: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .about-image {
-            position: sticky;
-            top: 100px;
-        }
-
-        .profile-image {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(10,25,51,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.02);
-        }
-
-        .about-content h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-        }
-
-        .about-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: clamp(1.5rem, 3vw, 1.8rem);
-        }
-
-        .about-text {
-            margin-bottom: 2rem;
-        }
-
-        .philosophy {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            transition: transform 0.3s ease;
-        }
-
-        .philosophy:hover {
-            transform: translateY(-5px);
-        }
-
-        .philosophy h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .philosophy-pillars {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .pillar {
-            text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(10,25,51,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .pillar:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(10,25,51,0.1);
-        }
-
-        .engagement {
-            margin: 2rem 0;
-            padding: 2rem;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 8px;
-            text-align: center;
-            transform: translateZ(0);
-            transition: transform 0.3s ease;
-        }
-
-        .engagement:hover {
-            transform: scale(1.02);
-        }
         /* Contact Form */
         .contact-section {
             background: var(--primary-color);
@@ -460,10 +345,6 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transform: translateZ(0);
             transition: transform 0.3s ease;
-        }
-
-        .contact-form:hover {
-            transform: translateY(-5px);
         }
 
         .form-group {
@@ -495,11 +376,6 @@
             box-shadow: 0 0 0 3px rgba(10,25,51,0.1);
         }
 
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
         .submit-button {
             background: var(--primary-color);
             color: white;
@@ -511,89 +387,21 @@
             font-weight: bold;
             width: 100%;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background: rgba(255,255,255,0.1);
-            transform: translate(-50%, -50%) rotate(45deg) scale(0);
-            transition: transform 0.6s ease;
         }
 
         .submit-button:hover {
             background-color: #0f2447;
             transform: translateY(-2px);
         }
-
-        .submit-button:hover::before {
-            transform: translate(-50%, -50%) rotate(45deg) scale(1);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-button {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--primary-color);
-                padding: 1rem;
-                flex-direction: column;
-                align-items: center;
-                transform: translateY(-150%);
-                transition: transform 0.3s ease;
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image {
-                position: static;
-                text-align: center;
-            }
-
-            .profile-image {
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .philosophy-pillars {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
 <body>
     <div class="progress-bar"></div>
     
     <nav class="navbar">
         <div class="navbar-content container">
             <div class="logo">
-                <img src="./images/logo-principal.png" alt="Swiss Revenue Solutions">
+                <a href="#home">
+                    <img src="images/logo-principal.png" alt="Swiss Revenue Solutions">
+                </a>
             </div>
             <button class="mobile-menu-button">☰</button>
             <ul class="nav-links">
@@ -612,11 +420,13 @@
             <div class="hero-content">
                 <h1 data-aos="fade-up">Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
                 <p data-aos="fade-up" data-aos-delay="200">Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse. Solutions personnalisées pour les hôtels indépendants en Suisse Romande.</p>
-    <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="400">
-        Planifiez votre consultation gratuite
-        <span class="arrow">→</span>
-    </a>
-</div>
+                <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="400">
+                    Planifiez votre consultation gratuite
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <section id="services" class="services-section">
         <div class="container">
@@ -667,41 +477,6 @@
         </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image" data-aos="fade-right">
-                    <img src="./images/Yo-profile.jpg" alt="Naroa Salcedo" class="profile-image">
-                </div>
-                <div class="about-content">
-                    <h2 data-aos="fade-up">À Propos</h2>
-                    <h3 data-aos="fade-up">Bonjour, je suis Naroa Salcedo</h3>
-                    <div class="about-text" data-aos="fade-up">
-                        <p>Spécialiste en Revenue Management avec plus de 10 ans d'expérience dans l'industrie hôtelière internationale.</p>
-                        <p>Ma vision du Revenue Management va au-delà des chiffres. Je crois en une approche personnalisée qui respecte l'identité unique de chaque établissement.</p>
-                    </div>
-                    <div class="philosophy" data-aos="fade-up">
-                        <h4>Ma Philosophie</h4>
-                        <div class="philosophy-pillars">
-                            <div class="pillar">
-                                <h5>La Transparence</h5>
-                                <p>Des objectifs clairs et une communication ouverte.</p>
-                            </div>
-                            <div class="pillar">
-                                <h5>L'Innovation</h5>
-                                <p>Des solutions technologiques avancées et pratiques.</p>
-                            </div>
-                            <div class="pillar">
-                                <h5>Le Sur-Mesure</h5>
-                                <p>Une attention personnalisée pour chaque client.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="contact-form" data-aos="fade-up">
@@ -714,6 +489,11 @@
                     <div class="form-group">
                         <label for="telephone">Téléphone</label>
                         <input type="tel" id="telephone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="horaire">Horaire souhaité pour le rendez-vous</label>
+                        <input type="datetime-local" id="horaire" required>
                     </div>
                     
                     <div class="form-group">
@@ -769,12 +549,17 @@
             }
         });
 
-        // Cerrar menú móvil al hacer clic en un enlace
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
+        // Validación de fecha en el formulario
+        const dateTimeInput = document.getElementById('horaire');
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+
+        const minDateTime = `\${year}-\${month}-\${day}T\${hours}:\${minutes}`;
+        dateTimeInput.min = minDateTime;
     </script>
 </body>
 </html>
