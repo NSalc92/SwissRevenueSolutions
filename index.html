@@ -38,6 +38,11 @@
             align-items: center;
         }
 
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -49,23 +54,11 @@
             text-decoration: none;
         }
 
-        .language-selector button {
-            background: none;
-            border: 1px solid white;
-            color: white;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            margin-left: 0.5rem;
-        }
-
-        .language-selector button.active {
-            background: white;
-            color: var(--primary-color);
-        }
-
         .hero-section {
             min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/zermatt-montana.jpg');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             padding-top: 80px;
@@ -99,6 +92,7 @@
             border-radius: 4px;
             margin-top: 2rem;
             font-weight: bold;
+            cursor: pointer;
         }
 
         .services-section {
@@ -120,11 +114,59 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
+        .about-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+
         .contact-section {
             background: var(--primary-color);
             color: white;
             padding: 5rem 0;
-            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            height: 150px;
         }
 
         footer {
@@ -142,67 +184,72 @@
             h1 {
                 font-size: 2rem;
             }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-content">
-            <div class="logo">SRS</div>
-            <ul class="nav-links">
-                <li><a href="#home" data-fr="Accueil" data-en="Home">Accueil</a></li>
-                <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
-                <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
-            </ul>
-            <div class="language-selector">
-                <button onclick="changeLanguage('fr')" class="active">FR</button>
-                <button onclick="changeLanguage('en')">EN</button>
+            <div class="logo">
+                <img src="images/logo-principal.jpg" alt="Swiss Revenue Solutions">
             </div>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <section id="home" class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1 data-fr="Innovez votre gestion hôtelière avec des solutions de Revenue Management" 
-                    data-en="Innovate your hotel management with Revenue Management solutions">
-                    Innovez votre gestion hôtelière avec des solutions de Revenue Management
-                </h1>
-                <p data-fr="Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse" 
-                   data-en="Your strategic partner for sustainable growth in Swiss hospitality">
-                    Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse
-                </p>
-                <a href="#contact" class="cta-button" data-fr="Consultation gratuite" data-en="Free consultation">
-                    Consultation gratuite
-                </a>
+                <h1>Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
+                <p>Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse</p>
+                <a href="#contact" class="cta-button">Consultation gratuite</a>
             </div>
         </div>
     </section>
 
     <section id="services" class="services-section">
         <div class="container">
-            <h2 data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
+            <h2>Nos Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3 data-fr="Revenue Management" data-en="Revenue Management">Revenue Management</h3>
-                    <p data-fr="Optimisation des revenus et stratégies tarifaires" 
-                       data-en="Revenue optimization and pricing strategies">
-                        Optimisation des revenus et stratégies tarifaires
-                    </p>
+                    <h3>Revenue Management</h3>
+                    <p>Optimisation des revenus et stratégies tarifaires</p>
                 </div>
                 <div class="service-card">
-                    <h3 data-fr="Analyse de Marché" data-en="Market Analysis">Analyse de Marché</h3>
-                    <p data-fr="Études concurrentielles et positionnement" 
-                       data-en="Competitive analysis and positioning">
-                        Études concurrentielles et positionnement
-                    </p>
+                    <h3>Analyse de Marché</h3>
+                    <p>Études concurrentielles et positionnement</p>
                 </div>
                 <div class="service-card">
-                    <h3 data-fr="Formation" data-en="Training">Formation</h3>
-                    <p data-fr="Formation et accompagnement personnalisé" 
-                       data-en="Training and personalized coaching">
-                        Formation et accompagnement personnalisé
-                    </p>
+                    <h3>Formation</h3>
+                    <p>Formation et accompagnement personnalisé</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="profile-image-container">
+                    <img src="images/Yo-profile.jpg" alt="Profile" class="profile-image">
+                </div>
+                <div class="about-text">
+                    <h2>L'expertise locale, la vision globale</h2>
+                    <p>Plus de 10 ans d'expérience dans le Revenue Management hôtelier en Suisse</p>
                 </div>
             </div>
         </div>
@@ -210,11 +257,26 @@
 
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 data-fr="Contactez-nous" data-en="Contact us">Contactez-nous</h2>
-            <a href="mailto:contact@swiss-revenue-solutions.ch" class="cta-button" 
-               data-fr="Demander une consultation" data-en="Request a consultation">
-                Demander une consultation
-            </a>
+            <h2>Contactez-nous</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Horaire souhaité pour le rendez-vous</label>
+                    <input type="datetime-local" id="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Envoyer</button>
+            </form>
         </div>
     </section>
 
@@ -225,16 +287,6 @@
     </footer>
 
     <script>
-        function changeLanguage(lang) {
-            document.documentElement.lang = lang;
-            document.querySelectorAll(`[data-\${lang}]`).forEach(element => {
-                element.textContent = element.getAttribute(`data-\${lang}`);
-            });
-            document.querySelectorAll('.language-selector button').forEach(button => {
-                button.classList.toggle('active', button.textContent.toLowerCase() === lang);
-            });
-        }
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
