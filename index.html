@@ -27,9 +27,6 @@
       max-width: 1200px;
       margin: auto;
       padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     nav ul {
@@ -55,45 +52,6 @@
       color: #f4f4f4;
     }
 
-    .hero {
-      text-align: center;
-      background: url('./images/hero-background.png') no-repeat center center/cover;
-      color: #001f3d;
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .hero h2 {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-
-    .cta-button {
-      background: #001f3d;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      border: 2px solid #001f3d;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: white;
-      color: #001f3d;
-    }
-
     .services {
       padding: 40px 20px;
       background-color: #f4f4f4;
@@ -112,31 +70,24 @@
       margin-bottom: 40px;
     }
 
-    .services-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-    }
-
     .service {
       text-align: center;
-      max-width: 200px;
       background: white;
-      padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
     .service img {
       max-width: 60px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .service h3 {
       color: #001f3d;
       font-size: 1rem;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     .service p {
@@ -159,42 +110,12 @@
     .cta-button:hover {
       background: #003366;
     }
-
-    /* Responsivo */
-    @media (max-width: 768px) {
-      .services-list {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .service {
-        max-width: 90%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .services h2 {
-        font-size: 1.8rem;
-      }
-
-      .services p {
-        font-size: 1rem;
-      }
-
-      .cta-button {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-      }
-    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="container">
-      <!-- Logo -->
-      <img src="./images/logo-principal.png" alt="Swiss Revenue Solutions Logo" style="max-height: 50px;">
-      <!-- Menú de navegación -->
       <nav>
         <ul>
           <li><a href="#home">Accueil</a></li>
@@ -207,13 +128,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h1>Planifions votre succès hôtelier avec précision suisse</h1>
-    <h2>Maximisez vos revenus dès aujourd'hui grâce à nos solutions personnalisées</h2>
-    <a href="#contact" class="cta-button">Contactez-nous maintenant</a>
-  </section>
-
   <!-- Services Section -->
   <section class="services" id="services">
     <div class="container">
@@ -223,28 +137,26 @@
       <p>
         Nous offrons des solutions personnalisées de gestion des revenus pour maximiser vos profits, réduire vos coûts et optimiser vos opérations hôtelières.
       </p>
-      <!-- Lista de servicios -->
-      <div class="services-list">
-        <div class="service">
-          <img src="./images/icon-cost.png" alt="Gestion des revenus">
-          <h3>Gestion des revenus</h3>
-          <p>Stratégies dynamiques pour maximiser votre RevPAR et vos profits.</p>
-        </div>
-        <div class="service">
-          <img src="./images/icon-custom.png" alt="Optimisation des coûts">
-          <h3>Optimisation des coûts</h3>
-          <p>Réduction des coûts opérationnels sans compromettre la qualité du service.</p>
-        </div>
-        <div class="service">
-          <img src="./images/icon-custom.png" alt="Gestion des canaux">
-          <h3>Gestion des canaux de distribution</h3>
-          <p>Optimisation de vos ventes sur les plateformes de réservation en ligne.</p>
-        </div>
-        <div class="service">
-          <img src="./images/icon-custom.png" alt="Ateliers et formations">
-          <h3>Ateliers et formations</h3>
-          <p>Formations sur mesure pour vos équipes afin de garantir une gestion efficace.</p>
-        </div>
+      <!-- Lista de servicios (vertical) -->
+      <div class="service">
+        <img src="./images/icon-cost.png" alt="Gestion des revenus">
+        <h3>Gestion des revenus</h3>
+        <p>Stratégies dynamiques pour maximiser votre RevPAR et vos profits.</p>
+      </div>
+      <div class="service">
+        <img src="./images/icon-custom.png" alt="Optimisation des coûts">
+        <h3>Optimisation des coûts</h3>
+        <p>Réduction des coûts opérationnels sans compromettre la qualité du service.</p>
+      </div>
+      <div class="service">
+        <img src="./images/icon-custom.png" alt="Gestion des canaux">
+        <h3>Gestion des canaux de distribution</h3>
+        <p>Optimisation de vos ventes sur les plateformes de réservation en ligne.</p>
+      </div>
+      <div class="service">
+        <img src="./images/icon-custom.png" alt="Ateliers et formations">
+        <h3>Ateliers et formations</h3>
+        <p>Formations sur mesure pour vos équipes afin de garantir une gestion efficace.</p>
       </div>
       <!-- CTA -->
       <a href="#contact" class="cta-button">En savoir plus</a>
