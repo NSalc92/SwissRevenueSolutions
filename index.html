@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swiss Revenue Solutions</title>
   <style>
-    /* Estilos generales */
+    /* General */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -23,7 +23,7 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    header .container {
+    .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -32,11 +32,11 @@
       padding: 0 20px;
     }
 
-    header .logo img {
+    .logo img {
       max-height: 50px;
     }
 
-    header nav ul {
+    nav ul.menu {
       list-style: none;
       display: flex;
       gap: 20px;
@@ -44,18 +44,17 @@
       padding: 0;
     }
 
-    header nav ul li a {
+    nav ul.menu li a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
-    header nav ul li a:hover {
+    nav ul.menu li a:hover {
       color: #ffd700;
     }
 
-    /* Selector de idioma */
     .language-selector {
       display: flex;
       align-items: center;
@@ -68,61 +67,13 @@
       border-radius: 5px;
       font-size: 0.9rem;
     }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <!-- Logo -->
-      <div class="logo">
-        <a href="#accueil">
-          <img src="images/logo-principal.png" alt="Logo de Swiss Revenue Solutions">
-        </a>
-      </div>
 
-      <!-- Navegación -->
-      <nav>
-        <ul>
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#avantages">Avantages</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Selector de idioma -->
-      <div class="language-selector">
-        <label for="language">Langue:</label>
-        <select id="language" name="language">
-          <option value="fr" selected>Français</option>
-          <option value="en">English</option>
-        </select>
-      </div>
-    </div>
-  </header>
-</body>
-</html>
-  <!-- Hero Section -->
-  <section id="accueil" class="hero">
-    <div class="hero-content">
-      <h1>Revenue Management avec Précision Suisse</h1>
-      <p>Des stratégies personnalisées pour maximiser vos revenus et réduire vos coûts.</p>
-      <a href="#contact" class="cta-button">Contactez-nous dès aujourd'hui</a>
-    </div>
-    <div class="hero-image">
-      <img src="images/zermatt-montana.jpg" alt="Paysage suisse">
-    </div>
-  </section>
-
-  <style>
     /* Hero Section */
     .hero {
       position: relative;
       text-align: center;
       color: #fff;
-      background: url('images/zermatt-montana.jpg') no-repeat center center/cover;
+      background: url('https://sintra-images.s3.eu-north-1.amazonaws.com/da36bb9a-4e32-49bf-9c7e-19cae1656b3e/cd9325f2-d0e6-45d7-9950-49d603f8f2f3/image.png') no-repeat center center/cover;
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -133,14 +84,14 @@
       z-index: 2;
       max-width: 800px;
       padding: 20px;
-      background: rgba(0, 31, 61, 0.8); /* Fondo semi-transparente */
+      background: rgba(0, 31, 61, 0.8);
       border-radius: 10px;
     }
 
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 20px;
-      color: #ffd700; /* Amarillo dorado */
+      color: #ffd700;
     }
 
     .hero p {
@@ -163,7 +114,6 @@
       background: #e6c200;
     }
 
-    /* Imagen de fondo con degradado */
     .hero::before {
       content: '';
       position: absolute;
@@ -175,7 +125,49 @@
       z-index: 1;
     }
   </style>
-  <!-- Avantages -->
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="#accueil">
+          <img src="images/logo-principal.png" alt="Logo de Swiss Revenue Solutions">
+        </a>
+      </div>
+
+      <!-- Menú -->
+      <nav>
+        <ul class="menu">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#avantages">Avantages</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Selector de idioma -->
+      <div class="language-selector">
+        <label for="language">Langue:</label>
+        <select id="language" name="language">
+          <option value="fr" selected>Français</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="accueil" class="hero">
+    <div class="hero-content">
+      <h1>Revenue Management avec Précision Suisse</h1>
+      <p>Des stratégies personnalisées pour maximiser vos revenus et réduire vos coûts.</p>
+      <a href="#contact" class="cta-button">Contactez-nous dès aujourd'hui</a>
+    </div>
+  </section>
+  <!-- Beneficios -->
   <section id="avantages" class="benefits">
     <div class="container">
       <h2>Pourquoi choisir Swiss Revenue Solutions ?</h2>
@@ -199,25 +191,22 @@
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Servicios -->
   <section id="services" class="services">
     <div class="container">
       <h2>Nos Services</h2>
       <div class="services-grid">
         <div class="service-item">
-          <img src="images/icon-strategy.png" alt="Stratégie de Revenue Management">
           <h3>Stratégie de Revenue Management</h3>
           <p>Des stratégies conçues pour maximiser les revenus et s'adapter à la saisonnalité du marché suisse.</p>
           <a href="#contact" class="cta-button">Demander une consultation gratuite</a>
         </div>
         <div class="service-item">
-          <img src="images/icon-analysis.png" alt="Analyse de Marché & Tarifs">
           <h3>Analyse de Marché & Optimisation des Tarifs</h3>
           <p>Nous analysons votre marché et optimisons vos tarifs pour maximiser l'occupation et le RevPAR.</p>
           <a href="#contact" class="cta-button">Demander une consultation gratuite</a>
         </div>
         <div class="service-item">
-          <img src="images/icon-channels.png" alt="Gestion des Canaux de Distribution">
           <h3>Gestion des Canaux de Distribution</h3>
           <p>Une gestion efficace des canaux de distribution pour réduire les coûts et augmenter les réservations directes.</p>
           <a href="#contact" class="cta-button">Demander une consultation gratuite</a>
@@ -225,77 +214,6 @@
       </div>
     </div>
   </section>
-
-  <style>
-    /* Avantages & Services */
-    .benefits, .services {
-      background: #fff;
-      padding: 50px 20px;
-    }
-
-    .benefits h2, .services h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #001f3d;
-    }
-
-    .benefits-grid, .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .benefit-item, .service-item {
-      text-align: center;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: #f9f9f9;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .benefit-item:hover, .service-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .benefit-item img, .service-item img {
-      max-width: 80px;
-      margin-bottom: 15px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: #ffd700;
-      color: #001f3d;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: #e6c200;
-    }
-  </style>
-  <!-- Témoignages -->
-  <section id="temoignages" class="testimonials">
-    <div class="container">
-      <h2>Ce que disent nos clients</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-item">
-          <p>"Swiss Revenue Solutions nous a aidés à augmenter notre RevPAR de 15 % pendant la basse saison. Leur approche personnalisée a fait toute la différence."</p>
-          <h4>Hôtel Boutique à Valais</h4>
-        </div>
-        <div class="testimonial-item">
-          <p>"Grâce à leur stratégie de distribution, nous avons réduit les commissions des OTAs de 20 % et augmenté nos réservations directes."</p>
-          <h4>Hôtel Indépendant à Genève</h4>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Blog -->
   <section id="blog" class="blog">
     <div class="container">
@@ -312,129 +230,12 @@
           <p>Apprenez à favoriser les réservations directes et à économiser sur les commissions.</p>
         </div>
       </div>
-      <div class="blog-cta">
-        <a href="blog.html" class="cta-button">Voir tous les articles</a>
-      </div>
     </div>
   </section>
-
-  <style>
-    /* Témoignages */
-    .testimonials {
-      background: #f4f4f4;
-      padding: 50px 20px;
-    }
-
-    .testimonials h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #001f3d;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .testimonial-item {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .testimonial-item p {
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-
-    .testimonial-item h4 {
-      text-align: right;
-      color: #001f3d;
-      font-weight: bold;
-    }
-
-    /* Blog */
-    .blog {
-      background: #fff;
-      padding: 50px 20px;
-    }
-
-    .blog h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #001f3d;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .blog-item {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .blog-item img {
-      width: 100%;
-      height: auto;
-    }
-
-    .blog-item h3 {
-      font-size: 1.2rem;
-      margin: 15px;
-      color: #001f3d;
-    }
-
-    .blog-item h3 a {
-      text-decoration: none;
-      color: #001f3d;
-    }
-
-    .blog-item h3 a:hover {
-      color: #ffd700;
-    }
-
-    .blog-item p {
-      margin: 0 15px 15px;
-      color: #555;
-    }
-
-    .blog-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .blog-cta {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: #ffd700;
-      color: #001f3d;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: #e6c200;
-    }
-  </style>
   <!-- Contacto -->
   <section id="contact" class="contact">
     <div class="container">
       <h2>Contactez-nous</h2>
-      <p>Prêt à maximiser les revenus de votre hôtel ? Remplissez le formulaire et nous vous répondrons rapidement.</p>
       <form action="https://formspree.io/f/yourformid" method="POST">
         <div class="form-group">
           <label for="nom">Nom</label>
@@ -443,10 +244,6 @@
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Votre email" required>
-        </div>
-        <div class="form-group">
-          <label for="telephone">Téléphone</label>
-          <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone">
         </div>
         <div class="form-group">
           <label for="message">Message</label>
@@ -459,114 +256,18 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-mountains">
-        <img src="images/mountains-footer.svg" alt="Montagnes suisses">
-      </div>
-      <div class="footer-content">
-        <p><a href="privacidad.html">Politique de Confidentialité</a> | <a href="terminos.html">Conditions Générales d'Utilisation</a></p>
-        <p>© 2025 Swiss Revenue Solutions. Tous droits réservés.</p>
-        <div class="footer-social">
-          <a href="https://linkedin.com/in/tuperfil" target="_blank">
-            <img src="images/linkedin-icon.png" alt="LinkedIn">
-          </a>
-        </div>
+    <div class="footer-mountains">
+      <img src="images/mountains-footer.svg" alt="Montagnes suisses">
+    </div>
+    <div class="footer-content">
+      <p><a href="privacidad.html">Politique de Confidentialité</a> | <a href="terminos.html">Conditions Générales d'Utilisation</a></p>
+      <p>© 2025 Swiss Revenue Solutions. Tous droits réservés.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/naroasalcedo/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px;">
+        </a>
       </div>
     </div>
   </footer>
-
-  <style>
-    /* Contacto */
-    .contact {
-      background: #fff;
-      padding: 50px 20px;
-    }
-
-    .contact h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #001f3d;
-    }
-
-    .contact p {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #555;
-    }
-
-    .contact form {
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    .cta-button {
-      display: block;
-      width: 100%;
-      background: #ffd700;
-      color: #001f3d;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      text-align: center;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: #e6c200;
-    }
-
-    /* Footer */
-    .footer {
-      background: #001f3d;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    .footer-mountains img {
-      width: 100%;
-      height: auto;
-    }
-
-    .footer-content {
-      padding: 20px;
-    }
-
-    .footer-content p {
-      margin: 10px 0;
-    }
-
-    .footer-content a {
-      color: #ffd700;
-      text-decoration: none;
-    }
-
-    .footer-content a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-social img {
-      width: 30px;
-      margin-top: 10px;
-    }
-  </style>
+</body>
+</html>
