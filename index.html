@@ -14,9 +14,9 @@
       color: #001f3d;
     }
 
-    header, footer {
-      background: #001f3d; /* Azul marino del logo */
-      color: #fff;
+    header {
+      background: #001f3d;
+      color: white;
       padding: 15px 0;
     }
 
@@ -31,51 +31,82 @@
       text-align: center;
     }
 
-    a {
-      color: #ffffff; 
-      text-decoration: none;
+    .hero {
+      text-align: center;
+      background: url('./images/hero-background.png') no-repeat center center/cover;
+      color: white;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    a:hover {
-      color: #e6e6e6;
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
     }
 
     .cta-button {
-      display: inline-block;
-      background: #ffffff; 
-      color: #001f3d; 
+      background: white;
+      color: #001f3d;
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      border: 2px solid #001f3d; 
+      border: 2px solid #001f3d;
       transition: background 0.3s ease, color 0.3s ease;
     }
 
     .cta-button:hover {
-      background: #001f3d; 
-      color: #ffffff; 
+      background: #001f3d;
+      color: white;
     }
 
-    /* Hero Section */
-    .hero-text {
-      color: #001f3d; /* Azul marino */
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
-
-    section {
+    .benefits {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
       padding: 40px 20px;
+      background: white;
+    }
+
+    .benefit {
+      flex: 1;
+      margin: 0 10px;
+    }
+
+    .benefit img {
+      max-width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .testimonials {
+      background: #f4f4f4;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .testimonials img {
+      max-width: 200px;
+      margin: 20px auto;
     }
 
     footer {
+      background: #001f3d;
+      color: white;
       text-align: center;
-      font-size: 0.9rem;
+      padding: 20px 0;
+    }
+
+    footer img {
+      max-width: 150px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -83,58 +114,40 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <!-- Logo -->
-        <div>
-          <a href="#home">
-            <img src="./images/logo-principal.png" alt="Logo de Swiss Revenue Solutions" style="max-height: 50px;">
-          </a>
-        </div>
-
-        <!-- Menú -->
-        <nav>
-          <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0;">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+      <img src="./images/logo-principal.png" alt="Swiss Revenue Solutions Logo" style="max-height: 50px;">
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" style="text-align: center; background: url('./images/hero-background.png') no-repeat center center/cover; color: #fff; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <h1>Revenue Management avec Précision Suisse</h1>
-    <p class="hero-text">Des stratégies personnalisées pour maximiser vos revenus et réduire vos coûts.</p>
-    <a href="#contact" class="cta-button">Contactez-nous dès aujourd'hui</a>
+  <section class="hero">
+    <h1>Planifions votre succès hôtelier avec précision suisse</h1>
+    <h2>Maximisez vos revenus dès aujourd'hui grâce à nos solutions personnalisées</h2>
+    <a href="#contact" class="cta-button">Contactez-nous maintenant</a>
   </section>
 
-  <!-- Servicios -->
-  <section id="services">
-    <div class="container">
-      <h2>Nos Services</h2>
-      <p>Nous proposons des solutions adaptées pour maximiser vos revenus et optimiser vos opérations.</p>
-      <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        <li style="flex: 1; max-width: 300px; text-align: center;">
-          <img src="./images/icon-cost.png" alt="Réduction des coûts">
-          <h3>Réduction des coûts</h3>
-        </li>
-        <li style="flex: 1; max-width: 300px; text-align: center;">
-          <img src="./images/icon-custom.png" alt="Solutions personnalisées">
-          <h3>Solutions personnalisées</h3>
-        </li>
-      </ul>
+  <!-- Beneficios -->
+  <section class="benefits">
+    <div class="benefit">
+      <img src="./images/icon-cost.png" alt="Optimización de costos">
+      <h3>Augmentez votre RevPAR jusqu'à 15%</h3>
     </div>
+    <div class="benefit">
+      <img src="./images/icon-custom.png" alt="Soluciones personalizadas">
+      <h3>Des solutions adaptées à vos besoins uniques</h3>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials">
+    <h2>Ce que disent nos clients</h2>
+    <p>"Grâce à SRS, nous avons augmenté nos revenus de 20% en seulement 6 mois."</p>
+    <img src="./images/mountains-footer.png" alt="Montañas suizas">
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container">
-      <img src="./images/mountains-footer.png" alt="Montagnes suisses" style="max-width: 200px; margin-bottom: 10px;">
-      <p>© 2025 Swiss Revenue Solutions. Tous droits réservés.</p>
-    </div>
+    <img src="./images/mountains-footer.png" alt="Montañas suizas">
+    <p>© 2025 Swiss Revenue Solutions. Tous droits réservés.</p>
   </footer>
 </body>
 </html>
