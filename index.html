@@ -28,6 +28,7 @@
 
     h1, h2, h3 {
       color: #001f3d;
+      text-align: center;
     }
 
     a {
@@ -58,6 +59,17 @@
     .cta-button:hover {
       background: #e6c200;
     }
+
+    /* Section */
+    section {
+      padding: 40px 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -78,105 +90,81 @@
             <li><a href="#home">Accueil</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#blog">Blog</a></li>
-            <li><a href="#about">À propos</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-
-        <!-- Selector de idioma -->
-        <div>
-          <select>
-            <option value="fr" selected>Français</option>
-            <option value="en">English</option>
-          </select>
-        </div>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" style="position: relative; text-align: center; color: #fff; background: url('images/hero-background.png') no-repeat center center/cover; height: 100vh;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 31, 61, 0.7);"></div>
-    <div style="position: relative; z-index: 2; padding: 20px;">
-      <h1>Revenue Management avec Précision Suisse</h1>
-      <p>Des stratégies personnalisées pour maximiser vos revenus et réduire vos coûts.</p>
-      <a href="#contact" class="cta-button">Contactez-nous dès aujourd'hui</a>
-    </div>
+  <section id="home" style="text-align: center; background: url('images/hero-background.png') no-repeat center center/cover; color: #fff; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h1>Revenue Management avec Précision Suisse</h1>
+    <p>Des stratégies personnalisées pour maximiser vos revenus et réduire vos coûts.</p>
+    <a href="#contact" class="cta-button">Contactez-nous dès aujourd'hui</a>
   </section>
-  <!-- Beneficios -->
-  <section id="services" class="benefits">
+
+  <!-- Servicios -->
+  <section id="services">
     <div class="container">
-      <h2>Pourquoi choisir Swiss Revenue Solutions ?</h2>
-      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <div style="flex: 1; text-align: center;">
+      <h2>Nos Services</h2>
+      <p>Nous proposons des solutions adaptées pour maximiser vos revenus et optimiser vos opérations.</p>
+      <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <li style="flex: 1; max-width: 300px; text-align: center;">
           <img src="images/icon-revenue.png" alt="Maximisation des revenus">
           <h3>Maximisation des revenus</h3>
-          <p>Des stratégies pour augmenter la rentabilité de votre hôtel boutique.</p>
-        </div>
-        <div style="flex: 1; text-align: center;">
+        </li>
+        <li style="flex: 1; max-width: 300px; text-align: center;">
           <img src="images/icon-cost.png" alt="Réduction des coûts">
           <h3>Réduction des coûts</h3>
-          <p>Optimisez vos tarifs et réduisez votre dépendance aux OTAs.</p>
-        </div>
-        <div style="flex: 1; text-align: center;">
-          <img src="images/icon-custom.png" alt="Solutions personnalisées">
-          <h3>Solutions personnalisées</h3>
-          <p>Des solutions adaptées aux besoins spécifiques de votre hôtel.</p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </section>
+
   <!-- Blog -->
-  <section id="blog">
+  <section id="blog" style="background: #f9f9f9;">
     <div class="container">
-      <h2>Blog de Swiss Revenue Solutions</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-        <!-- Post 1 -->
-        <div style="flex: 1; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+      <h2>Blog</h2>
+      <p>Découvrez nos derniers articles sur le Revenue Management.</p>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <div style="flex: 1; max-width: 300px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
           <img src="images/revenue-management-infografia.svg" alt="Infographie Revenue Management">
-          <h3><a href="post-1.html">Pourquoi le Revenue Management est essentiel pour les hôtels boutique en Suisse ?</a></h3>
-          <p>Découvrez comment le Revenue Management peut transformer vos revenus grâce à des stratégies personnalisées.</p>
+          <h3><a href="post-1.html">Pourquoi le Revenue Management est essentiel ?</a></h3>
         </div>
-        <!-- Post 2 -->
-        <div style="flex: 1; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-          <img src="images/impacto-revpar2.png" alt="Impact du Revenue Management sur le RevPAR">
-          <h3><a href="post-2.html">Comment la technologie peut transformer la gestion des revenus des hôtels boutique</a></h3>
-          <p>Apprenez à intégrer PMS, RMS et canaux de distribution pour maximiser vos résultats.</p>
+        <div style="flex: 1; max-width: 300px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+          <img src="images/impacto-revpar2.png" alt="Impact du Revenue Management">
+          <h3><a href="post-2.html">Comment la technologie optimise vos revenus</a></h3>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Contacto -->
-  <section id="contact" style="background: #f4f4f4; padding: 40px 20px;">
+  <section id="contact">
     <div class="container">
       <h2>Contactez-nous</h2>
-      <form action="https://formspree.io/f/yourformid" method="POST">
+      <form action="https://formspree.io/f/yourformid" method="POST" style="max-width: 400px; margin: auto;">
         <div>
           <label for="nom">Nom:</label>
-          <input type="text" id="nom" name="nom" required>
+          <input type="text" id="nom" name="nom" required style="width: 100%; margin-bottom: 10px;">
         </div>
         <div>
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 10px;">
         </div>
         <div>
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <textarea id="message" name="message" rows="5" required style="width: 100%;"></textarea>
         </div>
-        <button type="submit" class="cta-button">Envoyer</button>
+        <button type="submit" class="cta-button" style="margin-top: 10px;">Envoyer</button>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container" style="text-align: center;">
-      <img src="images/mountains-footer.svg" alt="Montagnes suisses">
-      <p>© 2025 Swiss Revenue Solutions. Tous droits réservés.</p>
-      <a href="https://www.linkedin.com/in/naroasalcedo/" target="_blank">
-        <img src="images/linkedin-icon.png" alt="LinkedIn" style="max-height: 30px;">
-      </a>
-    </div>
+    <p>© 2025 Swiss Revenue Solutions. Tous droits réservés.</p>
   </footer>
 </body>
 </html>
