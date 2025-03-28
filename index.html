@@ -55,6 +55,45 @@
       color: #f4f4f4;
     }
 
+    .hero {
+      text-align: center;
+      background: url('./images/hero-background.png') no-repeat center center/cover;
+      color: #001f3d;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+    }
+
+    .cta-button {
+      background: #001f3d;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      border: 2px solid #001f3d;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: white;
+      color: #001f3d;
+    }
+
     .services {
       padding: 40px 20px;
       background-color: #f4f4f4;
@@ -144,6 +183,13 @@
       </nav>
     </div>
   </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Planifions votre succès hôtelier avec précision suisse</h1>
+    <h2>Maximisez vos revenus dès aujourd'hui grâce à nos solutions personnalisées</h2>
+    <a href="#contact" class="cta-button">Contactez-nous maintenant</a>
+  </section>
 
   <!-- Services Section -->
   <section class="services" id="services">
