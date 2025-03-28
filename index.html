@@ -27,6 +27,9 @@
       max-width: 1200px;
       margin: auto;
       padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     nav ul {
@@ -62,6 +65,14 @@
       color: #001f3d;
       font-size: 2rem;
       margin-bottom: 20px;
+      position: relative;
+    }
+
+    .services h2::before {
+      content: url('./images/mountains-footer.png'); /* Imagen de montañas */
+      display: block;
+      margin: 0 auto 10px;
+      width: 100px;
     }
 
     .services p {
@@ -119,6 +130,9 @@
   <!-- Header -->
   <header>
     <div class="container">
+      <!-- Logo -->
+      <img src="./images/logo-principal.png" alt="Swiss Revenue Solutions Logo" style="max-height: 50px;">
+      <!-- Menú de navegación -->
       <nav>
         <ul>
           <li><a href="#home">Accueil</a></li>
