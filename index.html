@@ -1,164 +1,70 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swiss Revenue Solutions</title>
-  <style>
-    /* General */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #001f3d;
-    }
-
-    header {
-      background: #001f3d; /* Azul marino del logo */
-      color: white;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li {
-      display: inline;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #f4f4f4; /* Color más claro en hover */
-    }
-
-    .hero {
-      text-align: center;
-      background: url('./images/hero-background.png') no-repeat center center/cover;
-      color: #001f3d; /* Texto en azul marino */
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .hero h2 {
-      font-size: 1.5rem;
-      margin-bottom: 25px;
-    }
-
-    .cta-button {
-      background: white;
-      color: #001f3d;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      border: 2px solid #001f3d;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: #001f3d;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <!-- Logo -->
-      <img src="./images/logo-principal.png" alt="Swiss Revenue Solutions Logo" style="max-height: 50px;">
-      <!-- Menú de navegación -->
-      <nav>
-        <ul>
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h1>Planifions votre succès hôtelier avec précision suisse</h1>
-    <h2>Maximisez vos revenus dès aujourd'hui grâce à nos solutions personnalisées</h2>
-    <a href="#contact" class="cta-button">Contactez-nous maintenant</a>
-  </section>
-</body>
-</html>
-<section class="services" id="services">
-  <div class="container">
-    <!-- Título -->
-    <h2>Nos Services</h2>
-    <!-- Descripción introductoria -->
-    <p>
-      Nous offrons des solutions personnalisées de gestion des revenus pour maximiser vos profits, réduire vos coûts et optimiser vos opérations hôtelières.
-    </p>
-    <!-- Lista de servicios -->
-    <div class="services-list">
-      <div class="service">
-        <img src="./images/icon-cost.png" alt="Gestion des revenus">
-        <h3>Gestion des revenus</h3>
-        <p>Stratégies dynamiques pour maximiser votre RevPAR et vos profits.</p>
-      </div>
-      <div class="service">
-        <img src="./images/icon-custom.png" alt="Optimisation des coûts">
-        <h3>Optimisation des coûts</h3>
-        <p>Réduction des coûts opérationnels sans compromettre la qualité du service.</p>
-      </div>
-      <div class="service">
-        <img src="./images/icon-custom.png" alt="Gestion des canaux">
-        <h3>Gestion des canaux de distribution</h3>
-        <p>Optimisation de vos ventes sur les plateformes de réservation en ligne.</p>
-      </div>
-      <div class="service">
-        <img src="./images/icon-custom.png" alt="Ateliers et formations">
-        <h3>Ateliers et formations</h3>
-        <p>Formations sur mesure pour vos équipes afin de garantir une gestion efficace.</p>
-      </div>
-    </div>
-    <!-- CTA -->
-    <a href="#contact" class="cta-button">En savoir plus</a>
-  </div>
-</section>
-
 <style>
+  /* General */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #001f3d;
+  }
+
+  header {
+    background: #001f3d;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero {
+    text-align: center;
+    background: url('./images/hero-background.png') no-repeat center center/cover;
+    color: #001f3d;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  .cta-button {
+    background: #001f3d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid #001f3d;
+    transition: background 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: white;
+    color: #001f3d;
+  }
+
   .services {
     padding: 40px 20px;
     background-color: #f4f4f4;
@@ -210,19 +116,47 @@
     color: #555;
   }
 
-  .cta-button {
-    display: inline-block;
-    margin-top: 30px;
-    background: #001f3d;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero h2 {
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+
+    .services-list {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .service {
+      max-width: 90%; /* Ajusta el ancho de las tarjetas para móviles */
+    }
   }
 
-  .cta-button:hover {
-    background: #003366;
+  @media (max-width: 480px) {
+    .hero {
+      padding: 0 10px;
+    }
+
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+
+    .hero h2 {
+      font-size: 0.9rem;
+    }
+
+    .cta-button {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
   }
 </style>
