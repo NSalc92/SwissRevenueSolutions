@@ -15,20 +15,44 @@
     }
 
     header {
-      background: #001f3d;
+      background: #001f3d; /* Azul del logo */
       color: white;
       padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    h1, h2, h3 {
-      color: #001f3d;
-      text-align: center;
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f4f4f4; /* Color más claro en hover */
     }
 
     .hero {
@@ -67,87 +91,32 @@
       background: #001f3d;
       color: white;
     }
-
-    .benefits {
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      padding: 40px 20px;
-      background: white;
-    }
-
-    .benefit {
-      flex: 1;
-      margin: 0 10px;
-    }
-
-    .benefit img {
-      max-width: 80px;
-      margin-bottom: 15px;
-    }
-
-    .testimonials {
-      background: #f4f4f4;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .testimonials img {
-      max-width: 200px;
-      margin: 20px auto;
-    }
-
-    footer {
-      background: #001f3d;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    footer img {
-      max-width: 150px;
-      margin-bottom: 10px;
-    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="container">
+      <!-- Logo -->
       <img src="./images/logo-principal.png" alt="Swiss Revenue Solutions Logo" style="max-height: 50px;">
+      <!-- Menú de navegación -->
+      <nav>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#about">Sobre Nosotros</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="home">
     <h1>Planifions votre succès hôtelier avec précision suisse</h1>
     <h2>Maximisez vos revenus dès aujourd'hui grâce à nos solutions personnalisées</h2>
     <a href="#contact" class="cta-button">Contactez-nous maintenant</a>
   </section>
-
-  <!-- Beneficios -->
-  <section class="benefits">
-    <div class="benefit">
-      <img src="./images/icon-cost.png" alt="Optimización de costos">
-      <h3>Augmentez votre RevPAR jusqu'à 15%</h3>
-    </div>
-    <div class="benefit">
-      <img src="./images/icon-custom.png" alt="Soluciones personalizadas">
-      <h3>Des solutions adaptées à vos besoins uniques</h3>
-    </div>
-  </section>
-
-  <!-- Testimonios -->
-  <section class="testimonials">
-    <h2>Ce que disent nos clients</h2>
-    <p>"Grâce à SRS, nous avons augmenté nos revenus de 20% en seulement 6 mois."</p>
-    <img src="./images/mountains-footer.png" alt="Montañas suizas">
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <img src="./images/mountains-footer.png" alt="Montañas suizas">
-    <p>© 2025 Swiss Revenue Solutions. Tous droits réservés.</p>
-  </footer>
 </body>
 </html>
