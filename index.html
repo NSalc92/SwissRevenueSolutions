@@ -15,7 +15,7 @@
     }
 
     header, footer {
-      background: #001f3d;
+      background: #001f3d; /* Azul marino del logo */
       color: #fff;
       padding: 15px 0;
     }
@@ -32,12 +32,12 @@
     }
 
     a {
-      color: #ffffff; /* Cambiado a blanco */
+      color: #ffffff; 
       text-decoration: none;
     }
 
     a:hover {
-      color: #e6e6e6; /* Ligero cambio en hover */
+      color: #e6e6e6;
     }
 
     img {
@@ -47,27 +47,32 @@
 
     .cta-button {
       display: inline-block;
-      background: #ffffff; /* Fondo blanco */
-      color: #001f3d; /* Texto azul marino */
+      background: #ffffff; 
+      color: #001f3d; 
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      border: 2px solid #001f3d; /* Borde azul marino */
+      border: 2px solid #001f3d; 
       transition: background 0.3s ease, color 0.3s ease;
     }
 
     .cta-button:hover {
-      background: #001f3d; /* Fondo azul marino en hover */
-      color: #ffffff; /* Texto blanco en hover */
+      background: #001f3d; 
+      color: #ffffff; 
     }
 
-    /* Section */
+    /* Hero Section */
+    .hero-text {
+      color: #001f3d; /* Azul marino */
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
     section {
       padding: 40px 20px;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -102,7 +107,7 @@
   <!-- Hero Section -->
   <section id="home" style="text-align: center; background: url('./images/hero-background.png') no-repeat center center/cover; color: #fff; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <h1>Revenue Management avec Précision Suisse</h1>
-    <p>Des stratégies personnalisées pour maximiser vos revenus et réduire vos coûts.</p>
+    <p class="hero-text">Des stratégies personnalisées pour maximiser vos revenus et réduire vos coûts.</p>
     <a href="#contact" class="cta-button">Contactez-nous dès aujourd'hui</a>
   </section>
 
