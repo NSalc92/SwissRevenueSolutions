@@ -17,52 +17,63 @@
     header {
       background-color: #001f3d;
       color: white;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
+    }
+
+    header img {
+      max-width: 200px;
     }
 
     nav ul {
       list-style: none;
       padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
     nav ul li {
       display: inline;
-      margin: 0 15px;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
+      font-weight: bold;
     }
 
     section {
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
+    }
+
+    section img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
     }
 
     footer {
       background-color: #001f3d;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
+      margin-top: 20px;
     }
 
     .divider {
-      background: url('assets/montanas-divider.png') no-repeat center;
+      background: url('https://sintra-images.s3.eu-north-1.amazonaws.com/da36bb9a-4e32-49bf-9c7e-19cae1656b3e/b0ba7522-8a25-4ebc-adaf-7198941be536/4valles-montana2.jpg') no-repeat center;
+      background-size: cover;
       height: 50px;
-      margin: 20px 0;
-    }
-
-    .icon {
-      width: 50px;
-      height: 50px;
+      margin: 40px 0;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Swiss Revenue Solutions</h1>
+    <img src="https://sintra-images.s3.eu-north-1.amazonaws.com/da36bb9a-4e32-49bf-9c7e-19cae1656b3e/e3b42283-4ddb-4c9e-9a16-6a4f1702895c/logo-principal.png" alt="Swiss Revenue Solutions Logo">
     <nav>
       <ul>
         <li><a href="#home">Inicio</a></li>
@@ -76,18 +87,17 @@
   <section id="home">
     <h2>Bienvenido a Swiss Revenue Solutions</h2>
     <p>Soluciones de revenue management personalizadas para hoteles boutique en Suiza.</p>
-    <img src="assets/hero-background.png" alt="Hero Background">
+    <img src="https://sintra-images.s3.eu-north-1.amazonaws.com/da36bb9a-4e32-49bf-9c7e-19cae1656b3e/b0ba7522-8a25-4ebc-adaf-7198941be536/4valles-montana2.jpg" alt="Montañas Suizas">
   </section>
 
   <section id="services">
     <h2>Servicios</h2>
     <ul>
-      <li><img src="assets/icon-revenue.png" class="icon" alt="Revenue Icon"> Gestión de precios dinámicos</li>
-      <li><img src="assets/icon-custom.png" class="icon" alt="Custom Icon"> Optimización de distribución</li>
-      <li><img src="assets/icon-cost.png" class="icon" alt="Cost Icon"> Consultoría personalizada</li>
+      <li>Gestión de precios dinámicos</li>
+      <li>Optimización de distribución</li>
+      <li>Consultoría personalizada</li>
     </ul>
-    <p>Ofrecemos paquetes completos con opciones "light" para adaptarnos a tus necesidades.</p>
-    <img src="assets/automatizacion-revenue-management.png" alt="Automatización Revenue Management">
+    <img src="https://sintra-images.s3.eu-north-1.amazonaws.com/da36bb9a-4e32-49bf-9c7e-19cae1656b3e/570d0669-1598-44e8-91d7-a2d04b93403d/Yo-profile.jpg" alt="Automatización Revenue Management">
   </section>
 
   <div class="divider"></div>
@@ -95,7 +105,7 @@
   <section id="about">
     <h2>Sobre Mí</h2>
     <p>Con más de 10 años de experiencia en revenue management, ayudo a hoteles boutique a optimizar sus ingresos.</p>
-    <img src="assets/Yo-profile.jpg" alt="Perfil">
+    <img src="https://sintra-images.s3.eu-north-1.amazonaws.com/da36bb9a-4e32-49bf-9c7e-19cae1656b3e/570d0669-1598-44e8-91d7-a2d04b93403d/Yo-profile.jpg" alt="Perfil de Naroa">
   </section>
 
   <div class="divider"></div>
@@ -107,7 +117,6 @@
   </section>
 
   <footer>
-    <div class="divider"></div>
     <p>&copy; 2025 Swiss Revenue Solutions. Todos los derechos reservados.</p>
   </footer>
 </body>
