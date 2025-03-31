@@ -1,231 +1,114 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swiss Revenue Solutions</title>
   <style>
-    /* General */
+    /* Estilos CSS */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #f5f5f5;
       color: #001f3d;
     }
 
     header {
-      background: #001f3d;
+      background-color: #001f3d;
       color: white;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 10px;
+      text-align: center;
     }
 
     nav ul {
       list-style: none;
-      margin: 0;
       padding: 0;
-      display: flex;
-      gap: 20px;
     }
 
     nav ul li {
       display: inline;
+      margin: 0 15px;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
     }
 
-    nav ul li a:hover {
-      color: #f4f4f4;
-    }
-
-    .hero {
-      text-align: center;
-      background: url('./images/mountains-hero.jpg') no-repeat center center/cover;
-      color: white;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-
-    .hero h2 {
-      font-size: 1.5rem;
-      margin-bottom: 25px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-
-    .cta-button {
-      background: #001f3d;
-      color: white;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      border: 2px solid #001f3d;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: white;
-      color: #001f3d;
-    }
-
-    .services {
-      padding: 40px 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-    }
-
-    .services h2 {
-      color: #001f3d;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .services h2::before {
-      content: url('./images/mountains-footer.png'); /* Imagen de montañas */
-      display: block;
-      margin: 0 auto 10px;
-      width: 100px;
-    }
-
-    .services p {
-      font-size: 1.2rem;
-      color: #001f3d;
-      margin-bottom: 40px;
-    }
-
-    .service {
-      text-align: center;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    section {
       padding: 20px;
-      margin-bottom: 20px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      text-align: center;
     }
 
-    .service img {
-      max-width: 60px;
-      margin-bottom: 15px;
-    }
-
-    .service h3 {
-      color: #001f3d;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .service p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin-top: 30px;
-      background: #001f3d;
+    footer {
+      background-color: #001f3d;
       color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background 0.3s ease;
+      text-align: center;
+      padding: 10px;
     }
 
-    .cta-button:hover {
-      background: #003366;
+    .divider {
+      background: url('assets/montanas-divider.png') no-repeat center;
+      height: 50px;
+      margin: 20px 0;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="container">
-      <!-- Logo -->
-      <img src="./images/logo-principal.png" alt="Swiss Revenue Solutions Logo" style="max-height: 50px;">
-      <!-- Menú de navegación -->
-      <nav>
-        <ul>
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>Swiss Revenue Solutions</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#about">Sobre Mí</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h1>Planifions votre succès hôtelier avec précision suisse</h1>
-    <h2>Maximisez vos revenus dès aujourd'hui grâce à nos solutions personnalisées</h2>
-    <a href="#contact" class="cta-button">Contactez-nous maintenant</a>
+  <section id="home">
+    <h2>Bienvenido a Swiss Revenue Solutions</h2>
+    <p>Soluciones de revenue management personalizadas para hoteles boutique en Suiza.</p>
+    <img src="assets/hero-background.png" alt="Hero Background">
   </section>
 
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="container">
-      <!-- Título -->
-      <h2>Nos Services</h2>
-      <!-- Subtítulo -->
-      <p>
-        Nous offrons des solutions personnalisées de gestion des revenus pour maximiser vos profits, réduire vos coûts et optimiser vos opérations hôtelières.
-      </p>
-      <!-- Lista de servicios (vertical) -->
-      <div class="service">
-        <img src="./images/icon-cost.png" alt="Gestion des revenus">
-        <h3>Gestion des revenus</h3>
-        <p>Stratégies dynamiques pour maximiser votre RevPAR et vos profits.</p>
-      </div>
-      <div class="service">
-        <img src="./images/icon-custom.png" alt="Optimisation des coûts">
-        <h3>Optimisation des coûts</h3>
-        <p>Réduction des coûts opérationnels sans compromettre la qualité du service.</p>
-      </div>
-      <div class="service">
-        <img src="./images/icon-custom.png" alt="Gestion des canaux">
-        <h3>Gestion des canaux de distribution</h3>
-        <p>Optimisation de vos ventes sur les plateformes de réservation en ligne.</p>
-      </div>
-      <div class="service">
-        <img src="./images/icon-custom.png" alt="Ateliers et formations">
-        <h3>Ateliers et formations</h3>
-        <p>Formations sur mesure pour vos équipes afin de garantir une gestion efficace.</p>
-      </div>
-      <!-- CTA -->
-      <a href="#contact" class="cta-button">En savoir plus</a>
-    </div>
+  <section id="services">
+    <h2>Servicios</h2>
+    <ul>
+      <li><img src="assets/icon-revenue.png" class="icon" alt="Revenue Icon"> Gestión de precios dinámicos</li>
+      <li><img src="assets/icon-custom.png" class="icon" alt="Custom Icon"> Optimización de distribución</li>
+      <li><img src="assets/icon-cost.png" class="icon" alt="Cost Icon"> Consultoría personalizada</li>
+    </ul>
+    <p>Ofrecemos paquetes completos con opciones "light" para adaptarnos a tus necesidades.</p>
+    <img src="assets/automatizacion-revenue-management.png" alt="Automatización Revenue Management">
   </section>
+
+  <div class="divider"></div>
+
+  <section id="about">
+    <h2>Sobre Mí</h2>
+    <p>Con más de 10 años de experiencia en revenue management, ayudo a hoteles boutique a optimizar sus ingresos.</p>
+    <img src="assets/Yo-profile.jpg" alt="Perfil">
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <p>Email: <a href="mailto:naroasalcedo@gmail.com">naroasalcedo@gmail.com</a></p>
+    <p>Teléfono: +41 79 123 45 67</p>
+  </section>
+
+  <footer>
+    <div class="divider"></div>
+    <p>&copy; 2025 Swiss Revenue Solutions. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
