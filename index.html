@@ -1,179 +1,70 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiss Revenue Solutions</title>
-    <style>
-        /* Estilos Generales */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #001f3d;
-            background-color: #ffffff;
-        }
+<!-- Servicios Section Modificado -->
+<section id="services" class="services-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Nos Services</h2>
+        <div class="services-grid">
+            <!-- Basic Package -->
+            <div class="service-card" data-aos="fade-up">
+                <h3 class="service-title">Package Basic</h3>
+                <p class="service-description">Solution idéale pour les petits hôtels débutant en Revenue Management.</p>
+                <ul class="service-features">
+                    <li>Analyse mensuelle des performances</li>
+                    <li>Recommandations tarifaires</li>
+                    <li>Support par email</li>
+                    <li>Rapport mensuel</li>
+                </ul>
+                <p class="service-price">
+                    <a href="#contact" class="cta-link">Contactez-nous pour un devis personnalisé</a>
+                </p>
+            </div>
 
-        h1, h2, h3 {
-            margin: 0;
-        }
+            <!-- Standard Package -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="service-title">Package Standard</h3>
+                <p class="service-description">Pour les hôtels cherchant une gestion plus approfondie.</p>
+                <ul class="service-features">
+                    <li>Tout du package Basic</li>
+                    <li>Analyse hebdomadaire</li>
+                    <li>Optimisation des canaux de distribution</li>
+                    <li>Support téléphonique</li>
+                    <li>Formation de base</li>
+                </ul>
+                <p class="service-price">
+                    <a href="#contact" class="cta-link">Tarifs adaptés à vos besoins</a>
+                </p>
+            </div>
 
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        /* Variables de color */
-        :root {
-            --primary-color: #001f3d; /* Azul Marino */
-            --secondary-color: #ffffff; /* Blanco */
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background-image: url('4valles-montana2.jpg'); /* Ruta de la imagen */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 100px 0;
-            text-align: center;
-            color: var(--secondary-color);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">Innovez votre gestion hôtelière avec des solutions de Revenue Management...</h1>
-        </div>
-    </section>
-    <!-- Servicios Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Nos Services</h2>
-            <div class="services-grid">
-                <!-- Basic Package -->
-                <div class="service-card" data-aos="fade-up">
-                    <h3 class="service-title">Package Basic</h3>
-                    <p class="service-description">Solution idéale pour les petits hôtels débutant en Revenue Management.</p>
-                    <ul class="service-features">
-                        <li>Analyse mensuelle des performances</li>
-                        <li>Recommandations tarifaires</li>
-                        <li>Support par email</li>
-                        <li>Rapport mensuel</li>
-                    </ul>
-                    <p class="service-price">
-                        <a href="#contact">Contactez-nous pour un devis personnalisé</a>
-                    </p>
-                </div>
-
-                <!-- Standard Package -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="service-title">Package Standard</h3>
-                    <p class="service-description">Pour les hôtels cherchant une gestion plus approfondie.</p>
-                    <ul class="service-features">
-                        <li>Tout du package Basic</li>
-                        <li>Analyse hebdomadaire</li>
-                        <li>Optimisation des canaux de distribution</li>
-                        <li>Support téléphonique</li>
-                        <li>Formation de base</li>
-                    </ul>
-                    <p class="service-price">
-                        <a href="#contact">Tarifs adaptés à vos besoins</a>
-                    </p>
-                </div>
-                <!-- Premium Package -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="service-title">Package Premium</h3>
-                    <p class="service-description">Solution complète pour une gestion revenue optimale.</p>
-                    <ul class="service-features">
-                        <li>Tout du package Standard</li>
-                        <li>Analyse quotidienne</li>
-                        <li>Stratégie personnalisée</li>
-                        <li>Formation avancée</li>
-                        <li>Support prioritaire 7/7</li>
-                    </ul>
-                    <p class="service-price">
-                        <a href="#contact">Investissement sur mesure pour votre réussite</a>
-                    </p>
-                </div>
+            <!-- Premium Package -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="service-title">Package Premium</h3>
+                <p class="service-description">Solution complète pour une gestion revenue optimale.</p>
+                <ul class="service-features">
+                    <li>Tout du package Standard</li>
+                    <li>Analyse quotidienne</li>
+                    <li>Stratégie personnalisée</li>
+                    <li>Formation avancée</li>
+                    <li>Support prioritaire 7/7</li>
+                </ul>
+                <p class="service-price">
+                    <a href="#contact" class="cta-link">Investissement sur mesure pour votre réussite</a>
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <style>
-        /* Servicios Section */
-        .services-section {
-            padding: 50px 20px;
-            background-color: var(--secondary-color);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .service-description {
-            font-size: 1rem;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .service-features {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 15px 0;
-        }
-
-        .service-features li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .service-features li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .service-price a {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-    </style>
-
-</body>
-</html>
+<!-- Hero Section Modificado -->
+<section id="home" class="hero-section">
+    <div class="hero-background" style="background: url('images/4valles-montana2.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
+            <p>Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse. Solutions personnalisées pour les hôtels indépendants en Suisse Romande.</p>
+            <a href="#contact" class="cta-button">
+                Planifiez votre consultation gratuite
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
