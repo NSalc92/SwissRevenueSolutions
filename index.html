@@ -4,26 +4,503 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiss Revenue Solutions | Revenue Management Consulting</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Swiss Revenue Solutions - Solutions personnalisées de Revenue Management pour hôtels indépendants en Suisse Romande. Expert en optimisation des revenus hôteliers.">
+    <meta name="keywords" content="revenue management, hôtellerie suisse, consulting hôtelier, optimisation revenus, Suisse Romande">
+    <meta property="og:title" content="Swiss Revenue Solutions | Revenue Management Consulting">
+    <meta property="og:description" content="Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse">
+    <meta property="og:image" content="images/logo-principal.png">
+    <meta property="og:url" content="https://nsalc92.github.io/SwissRevenueSolutions/">
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("PfpjHaHGDBsJUOe8l");
+        })();
+    </script>
+
+    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* Aquí puedes añadir tus estilos personalizados */
+        :root {
+            --primary-color: #0a1933;
+            --secondary-color: #ffffff;
+            --text-color: #333333;
+            --bg-light: #f9f9f9;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 5vw, 2rem);
+            position: relative;
+            z-index: 3;
+        }
+
+        section {
+            padding: 6rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, #0a1933, #1a3b6d);
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(10,25,51,0.95);
+            backdrop-filter: blur(5px);
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/portrait-pierreavoi.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                rgba(10,25,51,0.8),
+                rgba(10,25,51,0.9)
+            );
+            z-index: 2;
+        }
+
+        .hero-content {
+            color: var(--secondary-color);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 2rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #0a1933;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border: 2px solid #ffffff;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #ffffff;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+        /* Services Section */
+        .services-section {
+            background: var(--bg-light);
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-size: clamp(2rem, 4vw, 2.5rem);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(10,25,51,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(10,25,51,0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--secondary-color);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(10,25,51,0.1);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .credential-item {
+            text-align: center;
+        }
+
+        .credential-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .form-group label .required {
+            color: #ff3860;
+            margin-left: 4px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(10,25,51,0.1);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Pop-up */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1002;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .close-popup {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .credentials {
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-</head>
 <body>
-    <!-- Hero Section Modificado -->
+    <div class="progress-bar"></div>
+    
+    <nav class="navbar">
+        <div class="navbar-content container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="images/logo-principal.png" alt="Swiss Revenue Solutions">
+                </a>
+            </div>
+            <button class="mobile-menu-button">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <section id="home" class="hero-section">
-        <div class="hero-background" style="background: url('images/4valles-montana2.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="hero-background"></div>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content" data-aos="fade-up">
                 <h1>Innovez votre gestion hôtelière avec des solutions de Revenue Management</h1>
                 <p>Votre partenaire stratégique pour une croissance durable dans l'hôtellerie suisse. Solutions personnalisées pour les hôtels indépendants en Suisse Romande.</p>
-                <a href="#contact" class="cta-button">Planifiez votre consultation gratuite<span class="arrow">→</span></a>
+                <a href="#contact" class="cta-button">
+                    Planifiez votre consultation gratuite
+                    <span class="arrow">→</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Servicios Section Modificado -->
     <section id="services" class="services-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Nos Services</h2>
@@ -38,9 +515,7 @@
                         <li>Support par email</li>
                         <li>Rapport mensuel</li>
                     </ul>
-                    <p class="service-price">
-                        <a href="#contact" class="cta-link" aria-label="Contactez-nous pour un devis personnalisé">Contactez-nous pour un devis personnalisé</a>
-                    </p>
+                    <p class="service-price">Contactez-nous pour un devis personnalisé</p>
                 </div>
 
                 <!-- Standard Package -->
@@ -54,9 +529,7 @@
                         <li>Support téléphonique</li>
                         <li>Formation de base</li>
                     </ul>
-                    <p class="service-price">
-                        <a href="#contact" class="cta-link" aria-label="Tarifs adaptés à vos besoins">Tarifs adaptés à vos besoins</a>
-                    </p>
+                    <p class="service-price">Tarifs adaptés à vos besoins</p>
                 </div>
 
                 <!-- Premium Package -->
@@ -70,23 +543,88 @@
                         <li>Formation avancée</li>
                         <li>Support prioritaire 7/7</li>
                     </ul>
-                    <p class="service-price">
-                        <a href="#contact" class="cta-link" aria-label="Investissement sur mesure pour votre réussite">Investissement sur mesure pour votre réussite</a>
-                    </p>
+                    <p class="service-price">Investissement sur mesure pour votre réussite</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="images/Yo-profile.jpg" alt="Naroa Salcedo">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h2>À Propos de Moi</h2>
+                    <p>Avec plus de 10 ans d'expérience dans l'hôtellerie internationale, je suis spécialisée dans le Revenue Management et la gestion hôtelière. Mon parcours m'a permis de travailler dans des établissements prestigieux en Suisse, en Espagne et en Belgique.</p>
+                    <p>Titulaire d'un Master en Gestion Hôtelière et certifiée par l'École Hôtelière de Lausanne (EHL) en Revenue Management, j'apporte une expertise approfondie et une approche personnalisée à chaque projet.</p>
+                    <div class="credentials">
+                        <div class="credential-item">
+                            <div class="credential-number">10+</div>
+                            <div class="credential-text">Années d'Expérience</div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-number">3</div>
+                            <div class="credential-text">Pays</div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-number">100%</div>
+                            <div class="credential-text">Satisfaction Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-form" data-aos="fade-up">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="user_email">Email <span class="required">*</span></label>
+                        <input type="email" id="user_email" name="user_email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="user_phone">Téléphone <span class="required">*</span></label>
+                        <input type="tel" id="user_phone" name="user_phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meeting_time">Horaire souhaité pour le rendez-vous</label>
+                        <input type="datetime-local" id="meeting_time" name="meeting_time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pop-up de éxito -->
+    <div class="popup" id="successPopup">
+        <div class="popup-content">
+            <h3>Message envoyé avec succès! 🎉</h3>
+            <p>Merci de nous avoir contacté. Nous vous répondrons dans les plus brefs délais.</p>
+            <button class="close-popup" onclick="closePopup()">Fermer</button>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
-            <p>&copy; 2025 Swiss Revenue Solutions. Tous droits réservés.</p>
+            <p>&copy; 2024 Swiss Revenue Solutions</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
+    <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
         // Inicializar AOS
         AOS.init({
@@ -94,6 +632,146 @@
             once: true,
             offset: 100
         });
+
+        // Manejo del formulario
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Obtener valores
+            const email = document.getElementById('user_email').value;
+            const phone = document.getElementById('user_phone').value;
+            
+            // Validar que al menos uno esté lleno
+            if (!email && !phone) {
+                alert('Veuillez fournir au moins un email ou un numéro de téléphone.');
+                return;
+            }
+
+            // Cambiar estado del botón
+            const submitButton = document.querySelector('.submit-button');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = 'Envoi en cours...';
+            submitButton.disabled = true;
+
+            // Preparar datos para EmailJS
+            const templateParams = {
+                user_email: email,
+                user_phone: phone,
+                meeting_time: document.getElementById('meeting_time').value,
+                message: document.getElementById('message').value
+            };
+
+            // Enviar email usando EmailJS
+            emailjs.send('swiss_revenue_contact', 'template_scxg67v', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showPopup();
+                    document.getElementById('contactForm').reset();
+                })
+                .catch(function(error) {
+                    console.log('FAILED...', error);
+                    alert('Une erreur s\'est produite. Veuillez réessayer plus tard.');
+                })
+                .finally(function() {
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                });
+        });
+
+        // Funciones del Pop-up
+        function showPopup() {
+            document.getElementById('successPopup').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
+        }
+
+        function closePopup() {
+            document.getElementById('successPopup').style.display = 'none';
+            document.body.style.overflow = ''; // Restaurar scroll
+        }
+
+        // Cerrar pop-up al hacer clic fuera
+        window.onclick = function(event) {
+            const popup = document.getElementById('successPopup');
+            if (event.target === popup) {
+                closePopup();
+            }
+        }
+
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+
+        // Mobile Menu
+        const menuButton = document.querySelector('.mobile-menu-button');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Validación de formulario mejorada
+        const emailInput = document.getElementById('user_email');
+        const phoneInput = document.getElementById('user_phone');
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function validatePhone(phone) {
+            return /^[\d\s+()-]{8,}$/.test(phone);
+        }
+
+        emailInput.addEventListener('blur', function() {
+            if (this.value && !validateEmail(this.value)) {
+                this.classList.add('error');
+            } else {
+                this.classList.remove('error');
+            }
+        });
+
+        phoneInput.addEventListener('blur', function() {
+            if (this.value && !validatePhone(this.value)) {
+                this.classList.add('error');
+            } else {
+                this.classList.remove('error');
+            }
+        });
     </script>
 </body>
 </html>
+
