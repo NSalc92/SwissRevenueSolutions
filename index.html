@@ -159,13 +159,129 @@
         <img src="images/4valles-montana2.jpg" alt="Montagnes suisses" class="mountain-image">
     </section>
 
-    <div class="mountain-divider">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#f4f4f4" d="M0,224L1440,96L1440,320L0,320Z"></path>
-        </svg>
+    $1
+
+    <!-- Navbar -->
+    <nav class="navbar" style="background-color: var(--primary-color); position: sticky; top: 0; z-index: 999; padding: 1rem 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="#home"><img src="images/logo-principal.png" alt="Swiss Revenue Solutions" style="height: 40px;"></a>
+            <ul style="display: flex; gap: 2rem; list-style: none;">
+                <li><a href="#home" style="color: white; font-weight: bold;">Accueil</a></li>
+                <li><a href="#services" style="color: white; font-weight: bold;">Services</a></li>
+                <li><a href="#about" style="color: white; font-weight: bold;">À propos</a></li>
+                <li><a href="#contact" style="color: white; font-weight: bold;">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Nos Services -->
+    <section id="services" style="background: var(--bg-light); padding: 6rem 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary-color); font-size: 2.5rem;" data-aos="fade-up">Nos Services</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(10,25,51,0.1);" data-aos="fade-up">
+                    <h3 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;">Package Basic</h3>
+                    <ul>
+                        <li>Analyse mensuelle des performances</li>
+                        <li>Recommandations tarifaires</li>
+                        <li>Support par email</li>
+                        <li>Rapport mensuel</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-weight: bold; color: var(--primary-color);">Contactez-nous pour un devis personnalisé</p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(10,25,51,0.1);" data-aos="fade-up" data-aos-delay="100">
+                    <h3 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;">Package Standard</h3>
+                    <ul>
+                        <li>Tout du package Basic</li>
+                        <li>Analyse hebdomadaire</li>
+                        <li>Optimisation des canaux de distribution</li>
+                        <li>Support téléphonique</li>
+                        <li>Formation de base</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-weight: bold; color: var(--primary-color);">Tarifs adaptés à vos besoins</p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(10,25,51,0.1);" data-aos="fade-up" data-aos-delay="200">
+                    <h3 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;">Package Premium</h3>
+                    <ul>
+                        <li>Tout du package Standard</li>
+                        <li>Analyse quotidienne</li>
+                        <li>Stratégie personnalisée</li>
+                        <li>Formation avancée</li>
+                        <li>Support prioritaire 7/7</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-weight: bold; color: var(--primary-color);">Investissement sur mesure pour votre réussite</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- À Propos -->
+    <section id="about" style="background: var(--secondary-color); padding: 6rem 0;">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem; max-width: 1000px; margin: 0 auto;">
+            <div style="flex: 1;" data-aos="fade-right">
+                <img src="images/Yo-profile.jpg" alt="Naroa Salcedo" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 10px 20px rgba(10,25,51,0.1);">
+            </div>
+            <div style="flex: 1;" data-aos="fade-left">
+                <h2 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem;">À Propos de Moi</h2>
+                <p style="margin-bottom: 1rem;">Avec plus de 10 ans d'expérience dans l'hôtellerie internationale, je suis spécialisée dans le Revenue Management et la gestion hôtelière. Mon parcours m'a permis de travailler dans des établissements prestigieux en Suisse, en Espagne et en Belgique.</p>
+                <p style="margin-bottom: 2rem;">Titulaire d'un Master en Gestion Hôtelière et certifiée par l'École Hôtelière de Lausanne (EHL) en Revenue Management, j'apporte une expertise approfondie et une approche personnalisée à chaque projet.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">10+</div>
+                        <div>Années d'Expérience</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">3</div>
+                        <div>Pays</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">100%</div>
+                        <div>Satisfaction Client</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background: var(--primary-color); color: var(--secondary-color); padding: 6rem 0;">
+        <div class="container" style="max-width: 600px; margin: 0 auto;">
+            <form id="contactForm" style="background: white; padding: 2.5rem; border-radius: 8px; color: var(--text-color);">
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="user_email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary-color);">Email <span style="color: #ff3860;">*</span></label>
+                    <input type="email" id="user_email" name="user_email" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="user_phone" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary-color);">Téléphone <span style="color: #ff3860;">*</span></label>
+                    <input type="tel" id="user_phone" name="user_phone" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="meeting_time" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary-color);">Horaire souhaité pour le rendez-vous</label>
+                    <input type="datetime-local" id="meeting_time" name="meeting_time" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary-color);">Message</label>
+                    <textarea id="message" name="message" rows="5" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px;"></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="border: none; background: var(--primary-color); color: white; cursor: pointer;">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Popup -->
+    <div id="successPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2.5rem; border-radius: 8px; text-align: center; max-width: 400px; width: 90%;">
+            <h3>Message envoyé avec succès! 🎉</h3>
+            <p>Merci de nous avoir contacté. Nous vous répondrons dans les plus brefs délais.</p>
+            <button onclick="closePopup()" style="margin-top: 1rem; padding: 0.8rem 1.5rem; background-color: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">Fermer</button>
+        </div>
     </div>
 
-    <script>
+<script>
         // Redirection des textes spécifiques vers la section de contact
         document.addEventListener("DOMContentLoaded", function () {
             const phrases = [
@@ -194,5 +310,70 @@
             </p>
         </div>
     </footer>
+<script>
+    // AOS init
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+
+    // Formulaire EmailJS
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('user_email').value;
+        const phone = document.getElementById('user_phone').value;
+
+        if (!email && !phone) {
+            alert('Veuillez fournir au moins un email ou un numéro de téléphone.');
+            return;
+        }
+
+        const submitButton = document.querySelector('.cta-button');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = 'Envoi en cours...';
+        submitButton.disabled = true;
+
+        const templateParams = {
+            user_email: email,
+            user_phone: phone,
+            meeting_time: document.getElementById('meeting_time').value,
+            message: document.getElementById('message').value
+        };
+
+        emailjs.send('swiss_revenue_contact', 'template_scxg67v', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                showPopup();
+                document.getElementById('contactForm').reset();
+            })
+            .catch(function(error) {
+                console.log('FAILED...', error);
+                alert("Une erreur s'est produite. Veuillez réessayer plus tard.");
+            })
+            .finally(function() {
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            });
+    });
+
+    function showPopup() {
+        document.getElementById('successPopup').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup() {
+        document.getElementById('successPopup').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    window.onclick = function(event) {
+        const popup = document.getElementById('successPopup');
+        if (event.target === popup) {
+            closePopup();
+        }
+    }
+</script>
 </body>
 </html>
