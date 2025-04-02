@@ -156,10 +156,12 @@
     </section>
 
     <section>
+    <div class="container">
         <img src="images/4valles-montana2.jpg" alt="Montagnes suisses" class="mountain-image">
-    </section>
+    </div>
+</section>
 
-    $1
+    
 
     <!-- Navbar -->
     <nav class="navbar" style="background-color: var(--primary-color); position: sticky; top: 0; z-index: 999; padding: 1rem 0;">
@@ -267,7 +269,7 @@
                     <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary-color);">Message</label>
                     <textarea id="message" name="message" rows="5" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px;"></textarea>
                 </div>
-                <button type="submit" class="cta-button" style="border: none; background: var(--primary-color); color: white; cursor: pointer;">Envoyer</button>
+                <button type="submit" class="submit-button" style="border: none; background: var(--primary-color); color: white; cursor: pointer;">Envoyer</button>
             </form>
         </div>
     </section>
@@ -375,6 +377,33 @@
         }
     }
 </script>
+<script>
+    // Validation Email
+    const emailInput = document.getElementById("user_email");
+    if (emailInput) {
+        emailInput.addEventListener("blur", function () {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (this.value && !emailRegex.test(this.value)) {
+                this.style.borderColor = "#ff3860";
+            } else {
+                this.style.borderColor = "";
+            }
+        });
+    }
+
+    // Validation Téléphone
+    const phoneInput = document.getElementById("user_phone");
+    if (phoneInput) {
+        phoneInput.addEventListener("blur", function () {
+            const phoneRegex = /^[\d\s\+\(\)\-]{8,}$/;
+            if (this.value && !phoneRegex.test(this.value)) {
+                this.style.borderColor = "#ff3860";
+            } else {
+                this.style.borderColor = "";
+            }
+        });
+    }
+</script>
+  
 </body>
 </html>
-
